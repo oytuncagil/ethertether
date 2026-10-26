@@ -13,9 +13,9 @@ lifecycle = "2.11.0"
 coreKtx = "1.19.1"
 coroutines = "1.11.0"
 shizuku = "13.1.5"
-serialization = "1.11.0"
+serialization = "1.12.0"
 navigation = "2.10.2"
-datastore = "1.2.1"
+datastore = "1.3.0"
 glance = "1.2.0"
 # Glance 1.2.0 brings WorkManager 2.7.1 with Room 2.2.5, whose keep rules drop the constructors
 # Room and WorkManager create by name under R8 full mode (release crash, 2026-10-09).
