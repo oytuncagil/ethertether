@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Filled circle with a check mark cut out.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="evenOdd"
+        android:pathData="M12,2 A10,10 0,1 1,12,22 A10,10 0,1 1,12,2 Z M10.5,16.2 L17.6,9.1 L16.2,7.7 L10.5,13.4 L7.8,10.7 L6.4,12.1 Z" />
+</vector>

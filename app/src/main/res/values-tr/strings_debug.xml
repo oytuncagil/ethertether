@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Geliştirici anahtarının arkasındaki hata ayıklama ekranı, gerçek cihaz testleri için.
+-->
+<resources>
+    <string name="debug_title">Motor hata ayıklama</string>
+    <string name="debug_intro">Paylaşım motorunun her adımını sırayla çalıştırır ve her ham sonucu gösterir. Gerçek bir telefonda test içindir.</string>
+    <string name="debug_request_title">İstek</string>
+    <string name="debug_mode_static">Sabit adres</string>
+    <string name="debug_mode_dhcp">Normal (DHCP)</string>
+    <string name="debug_phone_address">Telefon adresi</string>
+    <string name="debug_client_address">İstemci adresi</string>
+    <string name="debug_prefix">Önek uzunluğu</string>
+    <string name="debug_scope_local">Yalnızca yerel</string>
+    <string name="debug_scope_share">İnterneti paylaş</string>
+    <string name="debug_allow_fallback">Yalnızca yerel reddedilirse bunun yerine interneti paylaş</string>
+    <string name="debug_full_title">Tam işlemler</string>
+    <string name="debug_steps_title">Tek adımlar</string>
+    <string name="debug_action_start">Başlat</string>
+    <string name="debug_action_stop">Durdur</string>
+    <string name="debug_action_status">Durum</string>
+    <string name="debug_step_diagnose">Teşhis et</string>
+    <string name="debug_step_states">Durumları oku</string>
+    <string name="debug_step_interfaces">Arayüzleri oku</string>
+    <string name="debug_step_build">İsteği oluştur</string>
+    <string name="debug_step_stop">Yalnızca durdur</string>
+    <string name="debug_step_start">Yalnızca başlat</string>
+    <string name="debug_step_start_no_exemption">Yalnızca başlat, muafiyet olmadan</string>
+    <string name="debug_results_title">Sonuçlar</string>
+    <string name="debug_results_empty">Henüz sonuç yok.</string>
+    <string name="debug_action_copy">Tümünü kopyala</string>
+    <string name="debug_action_clear">Temizle</string>
+    <string name="debug_clip_label">EtherTether hata ayıklama sonuçları</string>
+    <string name="debug_running">Çalışıyor</string>
+    <string name="debug_request_invalid">İstek geçerli değil; önce alanları düzeltin.</string>
+    <string name="debug_entry_title">%1$s (%2$s)</string>
+    <string name="debug_note">Not: %1$s</string>
+    <string name="debug_next">Sonraki adım: %1$s</string>
+</resources>

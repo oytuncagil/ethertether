@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Meldungen der Anfrageprüfung.
+-->
+<resources>
+    <string name="error_phone_invalid">Geben Sie eine IPv4-Adresse wie 169.254.0.42 ein.</string>
+    <string name="error_phone_unusable">Diese Adresse kann in einem Netzwerk nicht verwendet werden.</string>
+    <string name="error_phone_network">Dies ist die Netzwerkadresse des Subnetzes. Wählen Sie eine andere Hostadresse.</string>
+    <string name="error_phone_broadcast">Dies ist die Broadcast-Adresse des Subnetzes. Wählen Sie eine andere Hostadresse.</string>
+    <string name="error_client_invalid">Geben Sie eine IPv4-Adresse wie 169.254.0.1 ein.</string>
+    <string name="error_client_unusable">Diese Adresse kann in einem Netzwerk nicht verwendet werden.</string>
+    <string name="error_client_network">Dies ist die Netzwerkadresse des Subnetzes. Wählen Sie eine andere Hostadresse.</string>
+    <string name="error_client_broadcast">Dies ist die Broadcast-Adresse des Subnetzes. Wählen Sie eine andere Hostadresse.</string>
+    <string name="error_client_same">Der Client braucht eine andere Adresse als das Telefon.</string>
+    <string name="error_client_other_subnet">Die Client-Adresse muss im selben Subnetz liegen wie die Telefonadresse.</string>
+    <string name="error_prefix_invalid">Geben Sie eine Präfixlänge von 16 bis 30 ein.</string>
+    <string name="error_prefix_too_short">Der DHCP-Server von Android akzeptiert nur /16 bis /30. Verwenden Sie /16 für das größte Netzwerk.</string>
+    <string name="error_prefix_too_long">Über /30 ist kein Platz für zwei Adressen. Verwenden Sie /30 oder weniger.</string>
+    <string name="warning_public_range">Dies sind öffentliche Internetadressen. Verwenden Sie sie nur, wenn Sie wissen, dass das Gerät sie braucht.</string>
+    <string name="warning_reserved_range">Diese Adressen sind für Dokumentation, Tests oder Mobilfunknetze reserviert.</string>
+    <string name="warning_overlaps">Dieses Subnetz überschneidet sich mit einem Netzwerk, welches das Telefon bereits nutzt. Das kann diese Verbindung stören.</string>
+    <string name="action_use_prefix">/%1$d verwenden</string>
+</resources>

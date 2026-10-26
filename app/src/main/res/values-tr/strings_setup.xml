@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Rehberli Shizuku kurulumu ve Shizuku hazırlık mesajları.
+-->
+<resources>
+    <!-- Hazırlık -->
+    <string name="readiness_not_installed">Shizuku yüklü değil.</string>
+    <string name="readiness_not_installed_next">Shizuku\'yu resmi sayfasından yükleyin, sonra kablosuz hata ayıklama ile başlatın.</string>
+    <string name="readiness_not_running">Shizuku yüklü ancak çalışmıyor.</string>
+    <string name="readiness_not_running_next">Shizuku\'yu açın ve başlatın. Telefon her yeniden başladığında tekrar başlatılması gerekir.</string>
+    <string name="readiness_sui">Sui etkin. EtherTether\'in bu sürümü yalnızca Shizuku ile çalışır.</string>
+    <string name="readiness_sui_next">Kablosuz hata ayıklama ile başlatılan Shizuku\'yu kullanın.</string>
+    <string name="readiness_too_old">Shizuku çok eski (API sürümü %1$d).</string>
+    <string name="readiness_too_old_next">Shizuku\'yu resmi sayfasından güncelleyin.</string>
+    <string name="readiness_permission">EtherTether\'in henüz Shizuku erişimi yok.</string>
+    <string name="readiness_permission_next">“Erişim ver” düğmesine dokunun ve EtherTether\'e izin verin.</string>
+    <string name="readiness_denied">Shizuku erişimi reddedildi.</string>
+    <string name="readiness_denied_next">Shizuku\'yu açın, uygulama listesinde EtherTether\'i bulun ve izin verin.</string>
+    <string name="readiness_root">Shizuku root olarak çalışıyor.</string>
+    <string name="readiness_root_next">Bu sürüm, Shizuku\'nun kablosuz hata ayıklama veya ADB ile başlatılmasını gerektirir. Shizuku\'yu durdurun ve kablosuz hata ayıklama ile başlatın.</string>
+    <string name="readiness_uid">Shizuku uid %1$d olarak çalışıyor.</string>
+    <string name="readiness_ready">Shizuku hazır. EtherTether, Ethernet paylaşımını yönetebilir.</string>
+
+    <!-- Kurulum ekranı -->
+    <string name="setup_title">Shizuku\'yu kur</string>
+    <string name="setup_status_title">Mevcut durum</string>
+    <string name="setup_what_title">Shizuku nedir</string>
+    <string name="setup_what_body">Shizuku, diğer uygulamaların sistem işlevlerini hata ayıklama shell\'inin yetkileriyle kullanmasını sağlayan ücretsiz bir uygulamadır. EtherTether ona tek bir iş için ihtiyaç duyar: Android\'den Ethernet paylaşımını başlatmasını veya durdurmasını istemek. Shizuku ayrı bir projedir ve EtherTether\'in parçası değildir.</string>
+    <string name="setup_install_title">1. Shizuku\'yu yükleyin</string>
+    <string name="setup_install_body">Shizuku\'yu resmi sayfasından indirin. Sayfa tarayıcıda açılır.</string>
+    <string name="setup_install_done">Shizuku yüklü.</string>
+    <string name="action_open_download">Resmi Shizuku sayfasını aç</string>
+    <string name="action_open_shizuku">Shizuku\'yu aç</string>
+    <string name="setup_start_title">2. Shizuku\'yu kablosuz hata ayıklama ile başlatın</string>
+    <string name="setup_start_intro">Bilgisayar gerekmez. Eşleştirme yalnızca bir kez gerekir.</string>
+    <string name="setup_step_wifi">Telefonu herhangi bir Wi-Fi ağına bağlayın. Kablosuz hata ayıklama Wi-Fi gerektirir, ancak internet gerektirmez.</string>
+    <string name="setup_step_developer">Geliştirici seçeneklerini açın: Ayarlar\'da Telefon hakkında\'yı açın ve Derleme numarası\'na yedi kez dokunun. Xiaomi telefonlarda bunun yerine OS sürümü\'ne dokunun.</string>
+    <string name="setup_step_pairing">Shizuku\'yu açın ve kablosuz hata ayıklama bölümünde Eşleştirme\'ye dokunun. Shizuku bir bildirim gösterir.</string>
+    <string name="setup_step_code">Geliştirici seçeneklerinde Kablosuz hata ayıklama\'yı açın, etkinleştirin ve “Cihazı eşleme kodu ile eşle” seçeneğine dokunun.</string>
+    <string name="setup_step_enter">Eşleme kodunu Shizuku bildirimine yazın.</string>
+    <string name="setup_step_start">Shizuku\'ya geri dönün ve Başlat\'a dokunun.</string>
+    <string name="setup_step_number">Adım %1$d</string>
+    <string name="action_open_developer_options">Geliştirici seçeneklerini aç</string>
+    <string name="setup_grant_title">3. EtherTether\'e izin verin</string>
+    <string name="setup_grant_body">Buraya dönün ve “Erişim ver” düğmesine dokunun. Shizuku, EtherTether\'e izin vermenizi ister.</string>
+    <string name="setup_reboot_title">Her yeniden başlatmadan sonra</string>
+    <string name="setup_reboot_body">Telefon yeniden başladığında Shizuku durur. Shizuku\'yu açın ve tekrar Başlat\'a dokunun; yeniden eşleştirme gerekmez.</string>
+    <string name="setup_no_browser">Sayfayı açabilen bir uygulama yok. Adres: shizuku.rikka.app/download.</string>
+    <string name="setup_no_settings">Geliştirici seçenekleri açılamadı. Ayarlar\'da Sistem bölümünden açın.</string>
+    <string name="action_back">Geri</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Log icon: a page with lines.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="evenOdd"
+        android:pathData="M5,3h14v18H5z M7,5v14h10V5z M8.5,7.5h7V9h-7z M8.5,11h7v1.5h-7z M8.5,14.5h5V16h-5z" />
+</vector>

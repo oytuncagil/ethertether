@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Guided Shizuku setup and the Shizuku readiness messages.
+-->
+<resources>
+    <!-- Readiness -->
+    <string name="readiness_not_installed">Shizuku is not installed.</string>
+    <string name="readiness_not_installed_next">Install Shizuku from its official page, then start it with wireless debugging.</string>
+    <string name="readiness_not_running">Shizuku is installed but not running.</string>
+    <string name="readiness_not_running_next">Open Shizuku and start it. It must be started again after every phone restart.</string>
+    <string name="readiness_sui">Sui is active. This version of EtherTether works with Shizuku only.</string>
+    <string name="readiness_sui_next">Use Shizuku started with wireless debugging.</string>
+    <string name="readiness_too_old">Shizuku is too old (API version %1$d).</string>
+    <string name="readiness_too_old_next">Update Shizuku from its official page.</string>
+    <string name="readiness_permission">EtherTether has no access to Shizuku yet.</string>
+    <string name="readiness_permission_next">Tap Grant access and allow EtherTether.</string>
+    <string name="readiness_denied">Access to Shizuku was denied.</string>
+    <string name="readiness_denied_next">Open Shizuku, find EtherTether in its list of apps and allow it.</string>
+    <string name="readiness_root">Shizuku runs as root.</string>
+    <string name="readiness_root_next">This version needs Shizuku started with wireless debugging or ADB. Stop Shizuku and start it with wireless debugging.</string>
+    <string name="readiness_uid">Shizuku runs as uid %1$d.</string>
+    <string name="readiness_ready">Shizuku is ready. EtherTether can control Ethernet tethering.</string>
+
+    <!-- Setup screen -->
+    <string name="setup_title">Set up Shizuku</string>
+    <string name="setup_status_title">Current state</string>
+    <string name="setup_what_title">What Shizuku is</string>
+    <string name="setup_what_body">Shizuku is a free app that lets other apps use system functions with the rights of the debugging shell. EtherTether needs it for one thing: asking Android to start or stop Ethernet tethering. Shizuku is a separate project and not part of EtherTether.</string>
+    <string name="setup_install_title">1. Install Shizuku</string>
+    <string name="setup_install_body">Download Shizuku from its official page. The page opens in your browser.</string>
+    <string name="setup_install_done">Shizuku is installed.</string>
+    <string name="action_open_download">Open the official Shizuku page</string>
+    <string name="action_open_shizuku">Open Shizuku</string>
+    <string name="setup_start_title">2. Start Shizuku with wireless debugging</string>
+    <string name="setup_start_intro">This needs no computer. Pairing is needed only once.</string>
+    <string name="setup_step_wifi">Connect the phone to any Wi-Fi network. Wireless debugging needs Wi-Fi, but no internet.</string>
+    <string name="setup_step_developer">Turn on Developer options: open Settings, About phone, and tap Build number seven times. On Xiaomi phones tap OS version instead.</string>
+    <string name="setup_step_pairing">Open Shizuku and tap Pairing in the section about wireless debugging. Shizuku shows a notification.</string>
+    <string name="setup_step_code">In Developer options, open Wireless debugging, turn it on and tap Pair device with pairing code.</string>
+    <string name="setup_step_enter">Type the pairing code into the Shizuku notification.</string>
+    <string name="setup_step_start">Go back to Shizuku and tap Start.</string>
+    <string name="setup_step_number">Step %1$d</string>
+    <string name="action_open_developer_options">Open Developer options</string>
+    <string name="setup_grant_title">3. Allow EtherTether</string>
+    <string name="setup_grant_body">Come back here and tap Grant access. Shizuku asks you to allow EtherTether.</string>
+    <string name="setup_reboot_title">After every restart</string>
+    <string name="setup_reboot_body">Shizuku stops when the phone restarts. Open Shizuku and tap Start again; you do not need to pair again.</string>
+    <string name="setup_no_browser">No app can open the page. The address is shizuku.rikka.app/download.</string>
+    <string name="setup_no_settings">Developer options could not be opened. Open them from Settings, System.</string>
+    <string name="action_back">Back</string>
+</resources>

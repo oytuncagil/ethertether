@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Verständliche Texte für jeden Tethering-Ergebniscode, jedes Engine-Ergebnis und jeden Hinweis,
+jeweils mit dem nächsten Schritt für den Nutzer.
+-->
+<resources>
+    <!-- TETHER_ERROR_*-Ergebniscodes: was passiert ist, dann was zu tun ist. -->
+    <string name="code_0">Android hat die Anfrage angenommen.</string>
+    <string name="code_0_next">Nichts zu tun.</string>
+    <string name="code_1">Android verfolgt diese Schnittstelle nicht für das Tethering (Fehler 1).</string>
+    <string name="code_1_next">Trennen Sie den Adapter, schließen Sie ihn wieder an und starten Sie dann erneut.</string>
+    <string name="code_2">Ein Systemdienst, den das Tethering braucht, ist nicht verfügbar (Fehler 2).</string>
+    <string name="code_2_next">Starten Sie das Telefon neu, starten Sie Shizuku erneut und versuchen Sie es dann noch einmal.</string>
+    <string name="code_3">Tethering wird auf diesem Telefon nicht unterstützt oder ist nicht erlaubt (Fehler 3).</string>
+    <string name="code_3_next">Prüfen Sie, dass kein Arbeitsprofil, keine Geräterichtlinie und keine Einstellung des Mobilfunkanbieters das Tethering blockiert, und versuchen Sie es dann noch einmal.</string>
+    <string name="code_4">Die Ethernet-Schnittstelle ist nicht verfügbar (Fehler 4).</string>
+    <string name="code_4_next">Prüfen Sie, dass der Adapter angeschlossen und erkannt ist, und starten Sie dann erneut.</string>
+    <string name="code_5">Android hat einen internen Tethering-Fehler gemeldet (Fehler 5).</string>
+    <string name="code_5_next">Beenden Sie, trennen Sie den Adapter, schließen Sie ihn wieder an und starten Sie erneut. Wenn es wieder auftritt, kopieren Sie das Protokoll und melden Sie den Fehler.</string>
+    <string name="code_6">Android konnte die Ethernet-Schnittstelle nicht einrichten (Fehler 6).</string>
+    <string name="code_6_next">Trennen Sie den Adapter, schließen Sie ihn wieder an und starten Sie erneut.</string>
+    <string name="code_7">Android konnte die Ethernet-Schnittstelle nicht freigeben (Fehler 7).</string>
+    <string name="code_7_next">Trennen Sie den Adapter. Android beendet das Ethernet-Tethering dann von selbst.</string>
+    <string name="code_8">Android konnte die Internetverbindung nicht über Ethernet teilen (Fehler 8).</string>
+    <string name="code_8_next">Wählen Sie Nur lokal, wodurch kein Internet geteilt wird, und starten Sie erneut.</string>
+    <string name="code_9">Android konnte das Teilen der Internetverbindung nicht beenden (Fehler 9).</string>
+    <string name="code_9_next">Trennen Sie den Adapter. Wenn die Verbindung weiter geteilt wird, starten Sie das Telefon neu.</string>
+    <string name="code_10">Android konnte die IPv4-Adresse nicht auf der Schnittstelle festlegen (Fehler 10).</string>
+    <string name="code_10_next">Prüfen Sie die Adressen. Wenn sie stimmen, trennen Sie den Adapter, schließen Sie ihn wieder an und starten Sie erneut.</string>
+    <string name="code_11">Die Tethering-Prüfung des Mobilfunkanbieters ist fehlgeschlagen (Fehler 11).</string>
+    <string name="code_11_next">Wählen Sie Nur lokal oder schalten Sie während des Tetherings die mobilen Daten aus, und starten Sie erneut.</string>
+    <string name="code_12">Der DHCP-Server von Android konnte nicht starten (Fehler 12).</string>
+    <string name="code_12_next">Verwenden Sie eine Präfixlänge von 16 bis 30, zum Beispiel /16, und starten Sie erneut.</string>
+    <string name="code_13">Die Tethering-Prüfung des Mobilfunkanbieters hat nicht geantwortet (Fehler 13).</string>
+    <string name="code_13_next">Wählen Sie Nur lokal oder schalten Sie während des Tetherings die mobilen Daten aus, und starten Sie erneut.</string>
+    <string name="code_14">Android hat die Anfrage abgelehnt, weil eine Berechtigung fehlt (Fehler 14).</string>
+    <string name="code_14_next">Starten Sie Shizuku mit kabellosem Debugging, nicht mit Root, und versuchen Sie es dann noch einmal.</string>
+    <string name="code_15">Android hat sich geweigert, den Tethering-Status zu melden (Fehler 15).</string>
+    <string name="code_15_next">Starten Sie Shizuku mit kabellosem Debugging, nicht mit Root, und versuchen Sie es dann noch einmal.</string>
+    <string name="code_16">Dieses Telefon unterstützt kein Ethernet-Tethering (Fehler 16).</string>
+    <string name="code_16_next">EtherTether kann das nicht ändern. Kopieren Sie das Protokoll und melden Sie das Telefonmodell.</string>
+    <string name="code_17">Es gab keine Tethering-Anfrage, die beendet werden konnte (Fehler 17).</string>
+    <string name="code_17_next">Nichts zu tun.</string>
+    <string name="code_18">Ethernet-Tethering wird bereits gestartet oder läuft schon (Fehler 18).</string>
+    <string name="code_18_next">Beenden Sie zuerst und starten Sie dann erneut.</string>
+    <string name="code_unknown">Android hat Fehler %1$d gemeldet, den diese Version nicht kennt.</string>
+    <string name="code_unknown_next">Kopieren Sie das Protokoll und melden Sie den Fehler mit Telefonmodell und Android-Version.</string>
+
+    <!-- Ergebnisse -->
+    <string name="outcome_serving_global">Ethernet-Tethering ist an, die Internetverbindung wird geteilt, auf %1$s.</string>
+    <string name="outcome_serving_local">Ethernet-Tethering ist an, nur lokal, auf %1$s.</string>
+    <string name="outcome_serving_next">Adressen: %1$s</string>
+    <string name="outcome_serving_next_unknown">Verbinden Sie das Gerät am anderen Ende des Kabels.</string>
+    <string name="outcome_waiting">Android hat die Anfrage angenommen, aber noch wird kein Ethernet-Adapter bedient.</string>
+    <string name="outcome_waiting_next">Schließen Sie den Adapter an. Android bedient ihn, sobald er erkannt wird. Wenn er bereits angeschlossen ist, beenden Sie und starten Sie erneut.</string>
+    <string name="outcome_stopped">Ethernet-Tethering ist aus.</string>
+    <string name="outcome_interface_error">Android hat das Tethering gestartet, aber die Schnittstelle %1$s ist fehlgeschlagen.</string>
+    <string name="failure_no_result">Android hat nicht rechtzeitig geantwortet.</string>
+    <string name="failure_no_result_next">Versuchen Sie es noch einmal. Wenn es wieder auftritt, beenden Sie Shizuku und starten Sie es erneut.</string>
+    <string name="failure_api_missing">Dieser Android-Version fehlt ein Teil, den EtherTether braucht: %1$s</string>
+    <string name="failure_api_missing_next">Öffnen Sie den Debug-Bildschirm, führen Sie Diagnose aus, kopieren Sie das Protokoll und melden Sie es mit Telefonmodell und Android-Version.</string>
+    <string name="failure_service_died">Die Verbindung zu Shizuku wurde unterbrochen.</string>
+    <string name="failure_service_died_next">Öffnen Sie Shizuku, starten Sie es erneut und versuchen Sie es dann noch einmal.</string>
+    <string name="failure_scope_unsupported">Android 11 teilt die Internetverbindung über Ethernet immer. Nur lokal ist nicht möglich.</string>
+    <string name="failure_scope_unsupported_next">Wählen Sie das Teilen der Internetverbindung oder erlauben Sie die Ausweichlösung, und starten Sie erneut.</string>
+    <string name="failure_unexpected">Etwas Unerwartetes ist passiert: %1$s</string>
+    <string name="failure_unexpected_next">Kopieren Sie das Protokoll und melden Sie den Fehler.</string>
+
+    <!-- Hinweise, wie ein Ergebnis zustande kam -->
+    <string name="note_exemption_refused">Android hat das Überspringen der Anbieterprüfung nicht erlaubt, daher wurde die Anfrage mit Prüfung gesendet.</string>
+    <string name="note_scope_fallback">Nur lokal wurde abgelehnt, daher wurde das Tethering wie von Ihnen erlaubt mit Internetfreigabe gestartet.</string>
+    <string name="note_local_scope_ignored">Sie haben Nur lokal angefordert, aber Android meldet, dass die Internetverbindung geteilt wird.</string>
+    <string name="note_events_unavailable">Der Tethering-Status von Android kann auf diesem Telefon nicht gelesen werden, daher ist das Ergebnis nicht bestätigt.</string>
+    <string name="note_stop_incomplete">Das vorherige Tethering wurde vor dem Start nicht sauber beendet.</string>
+
+    <!-- Die Engine war nicht erreichbar -->
+    <string name="unavailable_bind_timeout">Shizuku hat die EtherTether-Engine nicht rechtzeitig gestartet.</string>
+    <string name="unavailable_bind_timeout_next">Öffnen Sie Shizuku, beenden Sie es, starten Sie es erneut und versuchen Sie es dann noch einmal.</string>
+    <string name="unavailable_bind_failed">Shizuku konnte die EtherTether-Engine nicht starten.</string>
+    <string name="unavailable_bind_failed_next">Öffnen Sie Shizuku, prüfen Sie, ob es läuft, und versuchen Sie es dann noch einmal.</string>
+    <string name="unavailable_wrong_uid">Die EtherTether-Engine läuft nicht als Shell-Nutzer (%1$s).</string>
+    <string name="unavailable_wrong_uid_next">Starten Sie Shizuku mit kabellosem Debugging, nicht mit Root.</string>
+    <string name="unavailable_protocol">Die EtherTether-Engine stammt aus einer anderen App-Version.</string>
+    <string name="unavailable_protocol_next">Schließen Sie EtherTether vollständig und öffnen Sie es erneut.</string>
+    <string name="unavailable_died">Die EtherTether-Engine wurde während der Anfrage beendet.</string>
+    <string name="unavailable_died_next">Prüfen Sie, ob Shizuku läuft, und versuchen Sie es dann noch einmal.</string>
+    <string name="unavailable_no_answer">Die EtherTether-Engine hat nicht geantwortet.</string>
+    <string name="unavailable_no_answer_next">Prüfen Sie den hier angezeigten Status. Wenn er falsch ist, beenden Sie Shizuku, starten Sie es neu und versuchen Sie es noch einmal.</string>
+
+    <!-- Status -->
+    <string name="status_serving_global">An, Internetverbindung wird geteilt, Schnittstelle %1$s</string>
+    <string name="status_serving_local">An, nur lokal, Schnittstelle %1$s</string>
+    <string name="status_error">Fehler an Schnittstelle %1$s</string>
+    <string name="status_off_adapter">Aus. Adapter %1$s gefunden.</string>
+    <string name="status_off_no_adapter">Aus. Kein Ethernet-Adapter gefunden.</string>
+    <string name="status_adapter_removed">Der Adapter wurde entfernt, wodurch das Ethernet-Tethering endet. Schließen Sie ihn wieder an und tippen Sie auf Starten.</string>
+    <string name="status_interface">%1$s: %2$s, Kabel %3$s, %4$s</string>
+    <string name="status_up">aktiv</string>
+    <string name="status_down">inaktiv</string>
+    <string name="status_cable_yes">verbunden</string>
+    <string name="status_cable_no">nicht verbunden</string>
+    <string name="status_cable_unknown">unbekannt</string>
+    <string name="status_no_address">keine IPv4-Adresse</string>
+    <string name="status_events_missing">Der Tethering-Status von Android ist nicht verfügbar. Es wird nur die Kernel-Sicht angezeigt.</string>
+</resources>

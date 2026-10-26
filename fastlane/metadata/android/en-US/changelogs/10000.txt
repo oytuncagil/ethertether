@@ -1,0 +1,1 @@
+First public release: Android's Ethernet tethering with a fixed IPv4 address of your choice or normal DHCP, local only or sharing the internet, through Shizuku. Profiles, keep armed, start after restart, Quick Settings tile, widget, notification with Stop, an on-phone log, and English, Turkish and German.

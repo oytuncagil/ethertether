@@ -1,0 +1,1 @@
+Shizuku ile, seçtiğiniz sabit IPv4 adresiyle Ethernet paylaşımı

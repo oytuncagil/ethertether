@@ -1,0 +1,96 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Fast checks without Gradle: secrets, keystores, local files, style, license headers.
+  repository:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: Repository hygiene
+        run: python3 scripts/check_repo.py
+      - name: REUSE compliance (license and copyright of every file)
+        uses: fsfe/reuse-action@v6
+
+  # Every commit of a pull request needs a Developer Certificate of Origin sign-off.
+  dco:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Signed-off-by on every commit
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: scripts/check_dco.sh "$BASE" "$HEAD"
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      # The runner image ships the Android SDK; only the packages this build needs are added.
+      - name: Install SDK packages
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses > /dev/null
+          "$SDKMANAGER" "platforms;android-37.0" "build-tools;37.0.0"
+
+      # Also validates gradle-wrapper.jar against the official Gradle checksums.
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Unit and Compose UI tests
+        run: ./gradlew testDebugUnitTest :model:test
+
+      - name: Lint (warnings are errors)
+        run: ./gradlew lint
+
+      - name: Debug and release builds, permission and keep rule checks
+        run: ./gradlew assembleDebug assembleRelease verifyDebugPermissions verifyReleasePermissions verifyReleaseKeepRules
+
+      # APKs for testing are kept only for main, briefly: the private repository's artifact storage is
+      # small, and a full storage must never turn a green build red.
+      - uses: actions/upload-artifact@v7
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        with:
+          name: apks
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/outputs/apk/release/*.apk
+          retention-days: 3
+
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        continue-on-error: true
+        with:
+          name: reports
+          path: |
+            **/build/reports/
+            **/build/test-results/
+          retention-days: 7

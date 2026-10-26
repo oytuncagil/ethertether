@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+name: Feature request
+description: An idea to make EtherTether more useful.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What do you want to do
+      description: Describe the situation and the device you connect, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could EtherTether help
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else

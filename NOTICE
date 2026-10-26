@@ -1,0 +1,25 @@
+EtherTether
+Copyright 2026 Oytun Cagil Koltuk and EtherTether contributors
+
+Licensed under Apache-2.0 OR GPL-3.0-or-later, at your option.
+See LICENSE, LICENSE-APACHE and LICENSE-GPL.
+
+This product bundles the following Apache-2.0 components. Their NOTICE files
+contain these attribution notices:
+
+  Kotlin (standard library)
+  Copyright 2010-2024 JetBrains s.r.o and respective authors and developers
+
+  kotlinx.coroutines library.
+  Copyright 2016-2025 JetBrains s.r.o and contributors
+
+This product also bundles the Shizuku API library (MIT License,
+Copyright (c) 2021 RikkaW) and AndroidX and Jetpack Compose libraries
+(Apache-2.0, The Android Open Source Project), which publish no NOTICE file.
+
+It bundles kotlinx.serialization (Apache-2.0, JetBrains s.r.o.), AboutLibraries
+(Apache-2.0, Mike Penz), and a few icons from Google's Material Icons
+(Apache-2.0, Google LLC; files app/src/main/res/drawable/ic_md_*.xml).
+
+The complete list of third-party components and their license texts is shown
+in the app under About, Open-source libraries.

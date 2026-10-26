@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+# Every text file is stored and checked out with LF line endings.
+* text=auto eol=lf
+
+# Windows scripts keep CRLF so cmd.exe runs them.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.jar binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.zip binary

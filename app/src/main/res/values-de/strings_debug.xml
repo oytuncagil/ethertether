@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Debug-Bildschirm hinter dem Entwicklerschalter, für Tests auf echten Geräten.
+-->
+<resources>
+    <string name="debug_title">Engine-Debug</string>
+    <string name="debug_intro">Führt die Tethering-Engine Schritt für Schritt aus und zeigt jedes Rohergebnis. Für Tests auf einem echten Telefon.</string>
+    <string name="debug_request_title">Anfrage</string>
+    <string name="debug_mode_static">Feste Adresse</string>
+    <string name="debug_mode_dhcp">Normal (DHCP)</string>
+    <string name="debug_phone_address">Telefonadresse</string>
+    <string name="debug_client_address">Client-Adresse</string>
+    <string name="debug_prefix">Präfixlänge</string>
+    <string name="debug_scope_local">Nur lokal</string>
+    <string name="debug_scope_share">Internet teilen</string>
+    <string name="debug_allow_fallback">Wenn Nur lokal abgelehnt wird, stattdessen Internet teilen</string>
+    <string name="debug_full_title">Vollständige Abläufe</string>
+    <string name="debug_steps_title">Einzelschritte</string>
+    <string name="debug_action_start">Starten</string>
+    <string name="debug_action_stop">Beenden</string>
+    <string name="debug_action_status">Status</string>
+    <string name="debug_step_diagnose">Diagnose</string>
+    <string name="debug_step_states">Zustände lesen</string>
+    <string name="debug_step_interfaces">Schnittstellen lesen</string>
+    <string name="debug_step_build">Anfrage erstellen</string>
+    <string name="debug_step_stop">Nur beenden</string>
+    <string name="debug_step_start">Nur starten</string>
+    <string name="debug_step_start_no_exemption">Nur starten, ohne Ausnahme</string>
+    <string name="debug_results_title">Ergebnisse</string>
+    <string name="debug_results_empty">Noch keine Ergebnisse.</string>
+    <string name="debug_action_copy">Alles kopieren</string>
+    <string name="debug_action_clear">Leeren</string>
+    <string name="debug_clip_label">EtherTether-Debug-Ergebnisse</string>
+    <string name="debug_running">Läuft</string>
+    <string name="debug_request_invalid">Die Anfrage ist ungültig. Korrigieren Sie zuerst die Felder.</string>
+    <string name="debug_entry_title">%1$s um %2$s</string>
+    <string name="debug_note">Hinweis: %1$s</string>
+    <string name="debug_next">Nächster Schritt: %1$s</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Debug screen behind the developer switch, for real-device tests.
+-->
+<resources>
+    <string name="debug_title">Engine debug</string>
+    <string name="debug_intro">Runs the tethering engine step by step and shows every raw result. For testing on a real phone.</string>
+    <string name="debug_request_title">Request</string>
+    <string name="debug_mode_static">Fixed address</string>
+    <string name="debug_mode_dhcp">Normal (DHCP)</string>
+    <string name="debug_phone_address">Phone address</string>
+    <string name="debug_client_address">Client address</string>
+    <string name="debug_prefix">Prefix length</string>
+    <string name="debug_scope_local">Local only</string>
+    <string name="debug_scope_share">Share internet</string>
+    <string name="debug_allow_fallback">If local only is refused, share internet instead</string>
+    <string name="debug_full_title">Full operations</string>
+    <string name="debug_steps_title">Single steps</string>
+    <string name="debug_action_start">Start</string>
+    <string name="debug_action_stop">Stop</string>
+    <string name="debug_action_status">Status</string>
+    <string name="debug_step_diagnose">Diagnose</string>
+    <string name="debug_step_states">Read states</string>
+    <string name="debug_step_interfaces">Read interfaces</string>
+    <string name="debug_step_build">Build request</string>
+    <string name="debug_step_stop">Stop only</string>
+    <string name="debug_step_start">Start only</string>
+    <string name="debug_step_start_no_exemption">Start only, no exemption</string>
+    <string name="debug_results_title">Results</string>
+    <string name="debug_results_empty">No results yet.</string>
+    <string name="debug_action_copy">Copy all</string>
+    <string name="debug_action_clear">Clear</string>
+    <string name="debug_clip_label">EtherTether debug results</string>
+    <string name="debug_running">Running</string>
+    <string name="debug_request_invalid">The request is not valid; fix the fields first.</string>
+    <string name="debug_entry_title">%1$s at %2$s</string>
+    <string name="debug_note">Note: %1$s</string>
+    <string name="debug_next">Next step: %1$s</string>
+</resources>

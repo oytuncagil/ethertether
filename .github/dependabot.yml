@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+#
+# Weekly update pull requests. Each one runs the full CI before it can be merged, and every new
+# library version must keep a license compatible with Apache-2.0 and GPL-3.0-or-later.
+
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      androidx-and-compose:
+        patterns: ["androidx.*", "org.jetbrains.kotlin*", "org.jetbrains.kotlinx*", "com.android.*"]
+    commit-message:
+      prefix: deps
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci

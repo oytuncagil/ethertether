@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Onboarding: a USB-C Ethernet adapter with its port. Drawn in one colour; the app tints it with the theme.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="80">
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M14,34 h20 v12 h-20 z" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M34,40 h12" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M46,26 h44 a6,6 0 0 1 6,6 v16 a6,6 0 0 1 -6,6 h-44 z" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M62,32 h20 v12 h-4 v4 h-12 v-4 h-4 z" />
+    <path android:fillColor="#FF000000" android:pathData="M66,35 h2 v4 h-2 z M70,35 h2 v4 h-2 z M74,35 h2 v4 h-2 z" />
+    <path android:fillColor="#FF000000" android:pathData="M88,32 a2,2 0 1 0 0.01,0 z" />
+</vector>

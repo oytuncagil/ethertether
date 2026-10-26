@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Messages for the request validation.
+-->
+<resources>
+    <string name="error_phone_invalid">Enter an IPv4 address such as 169.254.0.42.</string>
+    <string name="error_phone_unusable">This address cannot be used on a network link.</string>
+    <string name="error_phone_network">This is the network address of the subnet; choose another host address.</string>
+    <string name="error_phone_broadcast">This is the broadcast address of the subnet; choose another host address.</string>
+    <string name="error_client_invalid">Enter an IPv4 address such as 169.254.0.1.</string>
+    <string name="error_client_unusable">This address cannot be used on a network link.</string>
+    <string name="error_client_network">This is the network address of the subnet; choose another host address.</string>
+    <string name="error_client_broadcast">This is the broadcast address of the subnet; choose another host address.</string>
+    <string name="error_client_same">The client needs a different address than the phone.</string>
+    <string name="error_client_other_subnet">The client address must be in the same subnet as the phone address.</string>
+    <string name="error_prefix_invalid">Enter a prefix length from 16 to 30.</string>
+    <string name="error_prefix_too_short">Android\'s DHCP server accepts only /16 to /30. Use /16 for the largest network.</string>
+    <string name="error_prefix_too_long">Above /30 there is no room for two addresses. Use /30 or less.</string>
+    <string name="warning_public_range">These are public internet addresses. Use them only if you know the device needs them.</string>
+    <string name="warning_reserved_range">These addresses are reserved for documentation, testing or carrier networks.</string>
+    <string name="warning_overlaps">This subnet overlaps a network the phone already uses, which can break that connection.</string>
+    <string name="action_use_prefix">Use /%1$d</string>
+</resources>

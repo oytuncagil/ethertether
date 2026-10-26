@@ -1,0 +1,16 @@
+[
+  {"name": "bug", "color": "d73a4a", "description": "Something does not work as described"},
+  {"name": "enhancement", "color": "a2eeef", "description": "A new feature or an improvement"},
+  {"name": "question", "color": "d876e3", "description": "A question about using EtherTether"},
+  {"name": "compatibility", "color": "fbca04", "description": "A phone, Android version or adapter that behaves differently"},
+  {"name": "translation", "color": "0e8a16", "description": "Texts in a language other than English"},
+  {"name": "documentation", "color": "0075ca", "description": "README, docs or texts in the app"},
+  {"name": "needs info", "color": "ededed", "description": "Waiting for details or a log from the reporter"},
+  {"name": "confirmed", "color": "b60205", "description": "Reproduced or understood; ready to fix"},
+  {"name": "platform limit", "color": "5319e7", "description": "Android or the phone maker does not allow it"},
+  {"name": "out of scope", "color": "cfd3d7", "description": "Outside what EtherTether does (see docs/DESIGN.md, Scope)"},
+  {"name": "duplicate", "color": "cfd3d7", "description": "Already reported"},
+  {"name": "good first issue", "color": "7057ff", "description": "A small, well-described change for a new contributor"},
+  {"name": "help wanted", "color": "008672", "description": "Contributions welcome"},
+  {"name": "dependencies", "color": "0366d6", "description": "Library, Gradle or GitHub Actions updates"}
+]

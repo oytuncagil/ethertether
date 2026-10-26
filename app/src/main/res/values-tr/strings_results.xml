@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Her paylaşım sonuç kodu, motor sonucu ve not için sade metinler, her biri kullanıcı için
+sonraki adımla birlikte.
+-->
+<resources>
+    <!-- TETHER_ERROR_* sonuç kodları: ne oldu, sonra ne yapılmalı. -->
+    <string name="code_0">Android isteği kabul etti.</string>
+    <string name="code_0_next">Yapılacak bir şey yok.</string>
+    <string name="code_1">Android bu arayüzü paylaşım için izlemiyor (hata 1).</string>
+    <string name="code_1_next">Adaptörü çıkarın, yeniden takın, sonra tekrar başlatın.</string>
+    <string name="code_2">Paylaşımın gerektirdiği bir sistem hizmeti kullanılamıyor (hata 2).</string>
+    <string name="code_2_next">Telefonu yeniden başlatın, Shizuku\'yu tekrar başlatın, sonra yeniden deneyin.</string>
+    <string name="code_3">İnternet paylaşımı bu telefonda desteklenmiyor veya izin verilmiyor (hata 3).</string>
+    <string name="code_3_next">İş profili, cihaz politikası veya operatör ayarının internet paylaşımını engellemediğini kontrol edin, sonra yeniden deneyin.</string>
+    <string name="code_4">Ethernet arayüzü kullanılamıyor (hata 4).</string>
+    <string name="code_4_next">Adaptörün takılı olduğunu ve tanındığını kontrol edin, sonra tekrar başlatın.</string>
+    <string name="code_5">Android dahili bir paylaşım hatası bildirdi (hata 5).</string>
+    <string name="code_5_next">Durdurun, adaptörü çıkarın, yeniden takın ve tekrar başlatın. Tekrarlarsa günlüğü kopyalayıp bildirin.</string>
+    <string name="code_6">Android Ethernet arayüzünü kuramadı (hata 6).</string>
+    <string name="code_6_next">Adaptörü çıkarın, yeniden takın ve tekrar başlatın.</string>
+    <string name="code_7">Android Ethernet arayüzünü serbest bırakamadı (hata 7).</string>
+    <string name="code_7_next">Adaptörü çıkarın; Android ardından Ethernet paylaşımını kendiliğinden sonlandırır.</string>
+    <string name="code_8">Android internet bağlantısını Ethernet üzerinden paylaşamadı (hata 8).</string>
+    <string name="code_8_next">İnternet paylaşmayan yalnızca yerel seçeneğini seçin ve tekrar başlatın.</string>
+    <string name="code_9">Android internet bağlantısının paylaşımını durduramadı (hata 9).</string>
+    <string name="code_9_next">Adaptörü çıkarın. Paylaşım devam ederse telefonu yeniden başlatın.</string>
+    <string name="code_10">Android arayüze IPv4 adresini atayamadı (hata 10).</string>
+    <string name="code_10_next">Adresleri kontrol edin. Doğruysa adaptörü çıkarın, yeniden takın ve tekrar başlatın.</string>
+    <string name="code_11">Operatörün internet paylaşımı kontrolü başarısız oldu (hata 11).</string>
+    <string name="code_11_next">Yalnızca yerel seçeneğini seçin veya paylaşım sırasında mobil veriyi kapatın ve tekrar başlatın.</string>
+    <string name="code_12">Android\'in DHCP sunucusu başlatılamadı (hata 12).</string>
+    <string name="code_12_next">16 ile 30 arasında bir önek uzunluğu kullanın, örneğin /16, ve tekrar başlatın.</string>
+    <string name="code_13">Operatörün internet paylaşımı kontrolü yanıt vermedi (hata 13).</string>
+    <string name="code_13_next">Yalnızca yerel seçeneğini seçin veya paylaşım sırasında mobil veriyi kapatın ve tekrar başlatın.</string>
+    <string name="code_14">Android bir izin eksik olduğu için isteği reddetti (hata 14).</string>
+    <string name="code_14_next">Shizuku\'yu root ile değil, kablosuz hata ayıklama ile başlatın, sonra yeniden deneyin.</string>
+    <string name="code_15">Android paylaşım durumunu bildirmeyi reddetti (hata 15).</string>
+    <string name="code_15_next">Shizuku\'yu root ile değil, kablosuz hata ayıklama ile başlatın, sonra yeniden deneyin.</string>
+    <string name="code_16">Bu telefon Ethernet paylaşımını desteklemiyor (hata 16).</string>
+    <string name="code_16_next">EtherTether bunu değiştiremez. Günlüğü kopyalayın ve telefon modelini bildirin.</string>
+    <string name="code_17">Durdurulacak bir paylaşım isteği yoktu (hata 17).</string>
+    <string name="code_17_next">Yapılacak bir şey yok.</string>
+    <string name="code_18">Ethernet paylaşımı zaten başlatılıyor veya çalışıyor (hata 18).</string>
+    <string name="code_18_next">Önce durdurun, sonra tekrar başlatın.</string>
+    <string name="code_unknown">Android, bu sürümün bilmediği bir hata döndürdü: %1$d.</string>
+    <string name="code_unknown_next">Günlüğü kopyalayın ve telefon modeli ile Android sürümüyle birlikte bildirin.</string>
+
+    <!-- Sonuçlar -->
+    <string name="outcome_serving_global">Ethernet paylaşımı açık, internet bağlantısı paylaşılıyor, arayüz: %1$s.</string>
+    <string name="outcome_serving_local">Ethernet paylaşımı açık, yalnızca yerel, arayüz: %1$s.</string>
+    <string name="outcome_serving_next">Adresler: %1$s</string>
+    <string name="outcome_serving_next_unknown">Kablonun diğer ucundaki cihazı bağlayın.</string>
+    <string name="outcome_waiting">Android isteği kabul etti, ancak henüz hiçbir Ethernet adaptörü kullanılmıyor.</string>
+    <string name="outcome_waiting_next">Adaptörü takın. Android, adaptör görünür görünmez onu kullanır. Takılıysa durdurup tekrar başlatın.</string>
+    <string name="outcome_stopped">Ethernet paylaşımı kapalı.</string>
+    <string name="outcome_interface_error">Android paylaşımı başlattı, ancak arayüz hata verdi: %1$s.</string>
+    <string name="failure_no_result">Android zamanında yanıt vermedi.</string>
+    <string name="failure_no_result_next">Yeniden deneyin. Tekrarlarsa Shizuku\'yu durdurup yeniden başlatın.</string>
+    <string name="failure_api_missing">Bu Android sürümünde EtherTether\'in ihtiyaç duyduğu bir parça eksik: %1$s</string>
+    <string name="failure_api_missing_next">Hata ayıklama ekranını açın, “Teşhis et” adımını çalıştırın, günlüğü kopyalayın ve telefon modeli ile Android sürümüyle birlikte bildirin.</string>
+    <string name="failure_service_died">Shizuku ile bağlantı kesildi.</string>
+    <string name="failure_service_died_next">Shizuku\'yu açın, yeniden başlatın, sonra tekrar deneyin.</string>
+    <string name="failure_scope_unsupported">Android 11 internet bağlantısını Ethernet üzerinden her zaman paylaşır; yalnızca yerel mümkün değil.</string>
+    <string name="failure_scope_unsupported_next">İnternet bağlantısını paylaşmayı seçin veya yedek seçeneğe izin verin ve tekrar başlatın.</string>
+    <string name="failure_unexpected">Beklenmeyen bir şey oldu: %1$s</string>
+    <string name="failure_unexpected_next">Günlüğü kopyalayın ve bildirin.</string>
+
+    <!-- Bir sonuca nasıl ulaşıldığına dair notlar -->
+    <string name="note_exemption_refused">Android operatör kontrolünün atlanmasına izin vermedi, bu yüzden istek kontrolle birlikte gönderildi.</string>
+    <string name="note_scope_fallback">Yalnızca yerel reddedildi, bu yüzden paylaşım, izin verdiğiniz gibi internet paylaşımıyla başlatıldı.</string>
+    <string name="note_local_scope_ignored">Yalnızca yerel istendi, ancak Android internet bağlantısının paylaşıldığını bildiriyor.</string>
+    <string name="note_events_unavailable">Android\'in paylaşım durumu bu telefonda okunamıyor, bu yüzden sonuç doğrulanmadı.</string>
+    <string name="note_stop_incomplete">Önceki paylaşımın durdurulması, başlatmadan önce düzgün tamamlanmadı.</string>
+
+    <!-- Motora ulaşılamadı -->
+    <string name="unavailable_bind_timeout">Shizuku, EtherTether motorunu zamanında başlatmadı.</string>
+    <string name="unavailable_bind_timeout_next">Shizuku\'yu açın, durdurup yeniden başlatın, sonra tekrar deneyin.</string>
+    <string name="unavailable_bind_failed">Shizuku, EtherTether motorunu başlatamadı.</string>
+    <string name="unavailable_bind_failed_next">Shizuku\'yu açıp çalıştığını kontrol edin, sonra tekrar deneyin.</string>
+    <string name="unavailable_wrong_uid">EtherTether motoru shell kullanıcısı olarak çalışmıyor (%1$s).</string>
+    <string name="unavailable_wrong_uid_next">Shizuku\'yu root ile değil, kablosuz hata ayıklama ile başlatın.</string>
+    <string name="unavailable_protocol">EtherTether motoru başka bir uygulama sürümüne ait.</string>
+    <string name="unavailable_protocol_next">EtherTether\'i tamamen kapatıp yeniden açın.</string>
+    <string name="unavailable_died">EtherTether motoru istek sırasında durdu.</string>
+    <string name="unavailable_died_next">Shizuku\'nun çalıştığını kontrol edin, sonra tekrar deneyin.</string>
+    <string name="unavailable_no_answer">EtherTether motoru yanıt vermedi.</string>
+    <string name="unavailable_no_answer_next">Burada gösterilen durumu kontrol edin. Yanlışsa Shizuku\'yu durdurup yeniden başlatın ve bir kez daha deneyin.</string>
+
+    <!-- Durum -->
+    <string name="status_serving_global">Açık, internet bağlantısı paylaşılıyor, arayüz %1$s</string>
+    <string name="status_serving_local">Açık, yalnızca yerel, arayüz %1$s</string>
+    <string name="status_error">Arayüzde hata: %1$s</string>
+    <string name="status_off_adapter">Kapalı. Adaptör bulundu: %1$s.</string>
+    <string name="status_off_no_adapter">Kapalı. Ethernet adaptörü bulunamadı.</string>
+    <string name="status_adapter_removed">Adaptör çıkarıldı, bu da Ethernet paylaşımını sonlandırır. Adaptörü yeniden takın ve Başlat\'a dokunun.</string>
+    <string name="status_interface">%1$s: %2$s, kablo %3$s, %4$s</string>
+    <string name="status_up">etkin</string>
+    <string name="status_down">devre dışı</string>
+    <string name="status_cable_yes">bağlı</string>
+    <string name="status_cable_no">bağlı değil</string>
+    <string name="status_cable_unknown">bilinmiyor</string>
+    <string name="status_no_address">IPv4 adresi yok</string>
+    <string name="status_events_missing">Android\'den paylaşım durumu alınamıyor; yalnızca çekirdek görünümü gösteriliyor.</string>
+</resources>

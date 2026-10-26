@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+#
+# Creates or updates the issue labels listed in .github/labels.json (docs/TRIAGE.md). Labels not in
+# the file are left alone.
+
+name: Labels
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/labels.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Create or update labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          for label in json.load(open(".github/labels.json", encoding="utf-8")):
+              subprocess.run(["gh", "label", "create", label["name"], "--color", label["color"],
+                              "--description", label["description"], "--force"], check=True)
+          PY

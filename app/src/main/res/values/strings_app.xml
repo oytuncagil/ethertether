@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Screens: home, profiles, log, settings, about, onboarding, notification, tile, widget.
+-->
+<resources>
+    <!-- Common actions -->
+    <string name="action_stop">Stop</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_save">Save</string>
+    <string name="action_more">More options</string>
+    <string name="action_manage_profiles">Manage profiles</string>
+    <string name="action_tether_settings">Open tethering settings</string>
+    <string name="action_use_client">Use %1$s</string>
+    <string name="copied">Copied.</string>
+
+    <!-- Home -->
+    <string name="home_state_off">Off</string>
+    <string name="home_state_on">On</string>
+    <string name="home_state_starting">Starting</string>
+    <string name="home_state_stopping">Stopping</string>
+    <string name="home_state_waiting">Waiting for the adapter</string>
+    <string name="home_state_unknown">Unknown</string>
+    <string name="home_status_description">Ethernet tethering: %1$s</string>
+    <string name="home_line_profile">Profile: %1$s</string>
+    <string name="home_line_interface">Interface %1$s, %2$s</string>
+    <string name="home_line_addresses">Phone address: %1$s</string>
+    <string name="home_line_clients">Connected device: %1$s</string>
+    <string name="home_line_adapter">Adapter: %1$s</string>
+    <string name="home_line_adapter_cable">Adapter: %1$s, cable connected</string>
+    <string name="home_line_adapter_cable_speed">Adapter: %1$s, cable connected, speed in Mbit/s: %2$d</string>
+    <string name="home_line_adapter_no_cable">Adapter: %1$s, no cable</string>
+    <string name="home_line_adapter_none">No Ethernet adapter found</string>
+    <string name="home_line_adapter_unknown">Adapter: not known yet</string>
+    <string name="home_line_other_adapter">Not used: %1$s. Android serves one adapter at a time.</string>
+    <string name="home_line_shizuku_ready">Shizuku: ready</string>
+    <string name="home_line_shizuku_not_ready">Shizuku: not ready</string>
+    <string name="home_start_description">Start with profile %1$s</string>
+    <string name="home_waiting">Waiting for the adapter.</string>
+    <string name="home_waiting_next">Plug in the adapter. Android starts serving it as soon as it appears.</string>
+    <string name="home_unknown">Shizuku stopped, so EtherTether cannot see or stop Ethernet tethering. It may still be on.</string>
+    <string name="home_unknown_next">Start Shizuku again, then tap Stop if tethering is on. Or turn Ethernet tethering off in Android\'s settings.</string>
+    <string name="home_adapter_back">The adapter is back.</string>
+    <string name="home_adapter_back_next">Removing it ended tethering. Tap Start to serve it again.</string>
+    <string name="home_started_with_notes">Tethering started.</string>
+    <string name="home_profile_title">Profile</string>
+    <string name="home_profile_locked">Stop tethering to change the profile.</string>
+    <string name="home_no_profiles">No profiles yet. Create one under Manage profiles.</string>
+    <string name="scope_local">local only</string>
+    <string name="scope_shared">sharing the internet connection</string>
+
+    <!-- Watchdog -->
+    <string name="alert_adapter_removed">The adapter was removed</string>
+    <string name="alert_adapter_removed_text">Removing the adapter ends Ethernet tethering for %1$s. Plug it in again and tap Start.</string>
+    <string name="alert_stopped_outside">Ethernet tethering stopped</string>
+    <string name="alert_stopped_outside_text">Tethering for %1$s was stopped outside EtherTether, for example in Settings.</string>
+    <string name="alert_rearm_failed">Could not start again</string>
+    <string name="alert_rearm_failed_text">EtherTether could not start %1$s again after the adapter was removed. Open the app for details.</string>
+    <string name="event_adapter_removed_next">Plug the adapter in again and tap Start. Turn on Keep armed in Settings to do this by itself.</string>
+    <string name="event_stopped_outside_next">Tap Start to turn it on again.</string>
+    <string name="event_rearm_failed_next">Check that Shizuku runs, then tap Start. The log has the details.</string>
+
+    <!-- Profiles -->
+    <string name="profiles_title">Profiles</string>
+    <string name="profiles_new">New profile</string>
+    <string name="profiles_select">Use</string>
+    <string name="profiles_edit">Edit</string>
+    <string name="profiles_duplicate">Duplicate</string>
+    <string name="profiles_delete">Delete</string>
+    <string name="profiles_selected">Used for Start, the tile and the widget</string>
+    <string name="profiles_action_description">%1$s %2$s</string>
+    <string name="profiles_copy_name">%1$s (copy)</string>
+    <string name="profiles_delete_title">Delete this profile?</string>
+    <string name="profiles_delete_text">%1$s will be deleted. This cannot be undone.</string>
+    <string name="profiles_import">Import profiles</string>
+    <string name="profiles_export">Export profiles</string>
+    <string name="profiles_import_hint">Import and export use a small JSON file. Imported profiles are checked; invalid ones are skipped.</string>
+    <!-- %1$s is profiles_added, %2$s is profiles_skipped. -->
+    <string name="profiles_imported">%1$s %2$s</string>
+    <plurals name="profiles_added">
+        <item quantity="one">%1$d profile added.</item>
+        <item quantity="other">%1$d profiles added.</item>
+    </plurals>
+    <plurals name="profiles_skipped">
+        <item quantity="one">%1$d skipped.</item>
+        <item quantity="other">%1$d skipped.</item>
+    </plurals>
+    <string name="profiles_import_not_a_file">This is not an EtherTether profile file.</string>
+    <string name="profiles_import_newer">This file is from a newer version of EtherTether. Update the app first.</string>
+    <string name="profiles_exported">Profiles exported.</string>
+    <string name="profiles_export_failed">The file could not be written.</string>
+    <string name="profiles_full">The profile list is full. Maximum: %1$d.</string>
+    <string name="profile_unnamed">Unnamed profile</string>
+    <string name="profile_summary_static">Fixed %1$s, device %2$s, %3$s</string>
+    <string name="profile_summary_dhcp">Normal DHCP, %1$s</string>
+    <string name="preset_car">Car ENET link-local 169.254.0.42/16</string>
+    <string name="preset_laptop">Laptop over USB-C Ethernet with internet</string>
+    <string name="preset_lab">Isolated lab network</string>
+    <string name="editor_new_title">New profile</string>
+    <string name="editor_edit_title">Edit profile</string>
+    <string name="editor_name">Name</string>
+    <string name="editor_name_hint">Maximum length: %1$d.</string>
+    <string name="editor_name_preset_hint">Leave empty to keep the ready-made name: %1$s.</string>
+    <string name="form_dhcp_explained">Android picks a private subnet itself and hands out addresses by DHCP, as normal Ethernet tethering does.</string>
+    <string name="form_scope_local_explained">Local only: the device on the cable reaches the phone, but not the internet.</string>
+    <string name="form_scope_share_explained">Share internet: the device on the cable uses the phone\'s internet connection. Android 11 always shares.</string>
+
+    <!-- Log -->
+    <string name="log_title">Log</string>
+    <string name="log_privacy">The log stays on this phone. It may contain interface names and addresses; check it before you share it.</string>
+    <string name="log_filter_all">All</string>
+    <string name="log_filter_problems">Warnings and errors</string>
+    <string name="log_search">Search</string>
+    <string name="log_export">Export</string>
+    <string name="log_copy">Copy</string>
+    <string name="log_clear">Clear</string>
+    <string name="log_clear_title">Clear the log?</string>
+    <string name="log_clear_text">All entries will be removed from this phone.</string>
+    <!-- The quantity is the total (%2$d). -->
+    <plurals name="log_count">
+        <item quantity="one">%1$d of %2$d entry shown</item>
+        <item quantity="other">%1$d of %2$d entries shown</item>
+    </plurals>
+    <string name="log_empty">No entries.</string>
+    <string name="log_level_info">Info</string>
+    <string name="log_level_warning">Warning</string>
+    <string name="log_level_error">Error</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_access">Privileged access</string>
+    <string name="settings_backend_only_shizuku">This version uses Shizuku, started with wireless debugging or ADB.</string>
+    <string name="settings_automation">Automatic start</string>
+    <string name="settings_keep_armed">Keep armed</string>
+    <string name="settings_keep_armed_summary">Removing the adapter ends Ethernet tethering. With this on, EtherTether asks again right away, so the next adapter you plug in is served by itself.</string>
+    <string name="settings_boot">Start after restart</string>
+    <string name="settings_boot_summary">After the phone restarts, EtherTether waits up to five minutes for Shizuku, then arms the selected profile.</string>
+    <string name="settings_automation_limits">Android allows this only while EtherTether shows its notification. While armed, every Ethernet adapter is used for tethering, so the phone cannot use a wired network itself. Shizuku must run: after a restart, start it again (Shizuku 13.6 and later can start by itself on Android 13 and later on a trusted Wi-Fi network).</string>
+    <string name="settings_vendor_hint">On Xiaomi, Redmi and POCO phones, allow Autostart and set Battery saver to No restrictions for EtherTether and for Shizuku, or the system may stop them.</string>
+    <string name="settings_unused_hint">Android can remove EtherTether\'s permissions when the app is not opened for a few months, and then the automatic start stops working. Turn this off for EtherTether.</string>
+    <string name="settings_unused_open">Open the setting</string>
+    <string name="settings_open_app_settings">Open app settings</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_alerts">Alert when tethering stops</string>
+    <string name="settings_alerts_summary">Tells you when the adapter was removed or tethering was stopped outside EtherTether.</string>
+    <string name="settings_notifications_off">Notifications are off for EtherTether. You will not see the Stop button or alerts outside the app.</string>
+    <string name="settings_allow_notifications">Allow notifications</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="theme_system">Follow the phone</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_dynamic_color">Colours from the wallpaper</string>
+    <string name="settings_dynamic_color_summary">Uses the colours of your wallpaper (Android 12 and later).</string>
+    <string name="settings_language">Language</string>
+    <string name="language_system">Phone language</string>
+    <string name="settings_show_intro">Show the introduction again</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_version">Version %1$s (%2$d), %3$s build</string>
+    <string name="about_owner">Copyright 2026 Oytun Cagil Koltuk</string>
+    <string name="about_license_title">License</string>
+    <string name="about_license">EtherTether is free software under the Apache License 2.0 or the GNU General Public License 3.0 or later, whichever you choose. You may use, share and change it under the terms of the license you pick.</string>
+    <string name="about_libraries">Open-source libraries</string>
+    <string name="about_source_title">Source code</string>
+    <string name="about_open_source">Open in the browser</string>
+    <string name="about_signing_title">Signing certificate</string>
+    <string name="about_signing_official">This application is signed with the official EtherTether release key.</string>
+    <string name="about_signing_other">This application is not signed with the official EtherTether release key.</string>
+    <string name="about_privacy_title">Privacy</string>
+    <string name="about_privacy">EtherTether has no internet permission and collects nothing. The log stays on this phone until you export it.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_finish">Start using EtherTether</string>
+    <string name="onboarding_page">Page %1$d of %2$d</string>
+    <string name="onboarding_welcome_title">Ethernet tethering, your way</string>
+    <string name="onboarding_welcome_text">EtherTether starts Android\'s own Ethernet tethering for a USB or USB-C Ethernet adapter: with a fixed address you choose, for devices such as diagnostic interfaces or lab equipment, or with normal sharing. Stop puts everything back to normal.</string>
+    <string name="onboarding_shizuku_title">Shizuku gives the access</string>
+    <string name="onboarding_shizuku_text">Android lets only the system and the debugging shell start tethering with a fixed address. Shizuku, a free separate app, runs with the shell\'s rights after you start it with wireless debugging, on the phone alone, no computer needed.</string>
+    <string name="onboarding_setup_steps">Show me the steps</string>
+    <string name="onboarding_adapter_title">Test your adapter</string>
+    <string name="onboarding_adapter_text">Plug in your USB or USB-C Ethernet adapter and tap Check adapter. A cable is not needed for this test.</string>
+    <string name="onboarding_adapter_needs_shizuku">The adapter can be checked once Shizuku is ready.</string>
+    <string name="onboarding_check_adapter">Check adapter</string>
+    <string name="onboarding_done_title">Ready</string>
+    <string name="onboarding_done_text">Pick a profile and tap Start. You can also start and stop from the Quick Settings tile and the home-screen widget.</string>
+
+    <!-- Notification, tile, widget -->
+    <string name="channel_ongoing">Tethering status</string>
+    <string name="channel_ongoing_description">Shown while Ethernet tethering runs or waits for the adapter, with a Stop button.</string>
+    <string name="channel_alerts">Alerts</string>
+    <string name="channel_alerts_description">When the adapter is removed or tethering stops outside EtherTether.</string>
+    <string name="notification_on">Ethernet tethering is on</string>
+    <string name="notification_waiting">Waiting for the adapter</string>
+    <string name="notification_rearming">Arming again</string>
+    <string name="notification_starting">Starting Ethernet tethering</string>
+    <string name="notification_stopping">Stopping Ethernet tethering</string>
+    <string name="notification_text_local">%1$s, %2$s, local only</string>
+    <string name="notification_text_shared">%1$s, %2$s, sharing the internet connection</string>
+    <string name="tile_label">Ethernet tethering</string>
+    <string name="tile_needs_shizuku">Shizuku needed</string>
+    <string name="tile_waiting">Waiting for the adapter</string>
+    <string name="widget_label">Ethernet tethering</string>
+    <string name="widget_description">Start and stop Ethernet tethering with the selected profile.</string>
+    <string name="widget_on">Tethering on</string>
+    <string name="widget_off">Tethering off</string>
+    <string name="widget_waiting">Waiting for the adapter</string>
+    <string name="widget_needs_shizuku">Shizuku needed</string>
+    <string name="widget_button_description">%1$s, profile %2$s</string>
+</resources>

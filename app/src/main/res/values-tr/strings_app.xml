@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Aşama 3 ekranları: ana ekran, profiller, günlük, ayarlar, hakkında, tanıtım, bildirim, kutucuk, widget.
+-->
+<resources>
+    <!-- Ortak işlemler -->
+    <string name="action_stop">Durdur</string>
+    <string name="action_cancel">İptal</string>
+    <string name="action_dismiss">Kapat</string>
+    <string name="action_save">Kaydet</string>
+    <string name="action_more">Diğer seçenekler</string>
+    <string name="action_manage_profiles">Profilleri yönet</string>
+    <string name="action_tether_settings">Paylaşım ayarlarını aç</string>
+    <string name="action_use_client">%1$s kullan</string>
+    <string name="copied">Kopyalandı.</string>
+
+    <!-- Ana ekran -->
+    <string name="home_state_off">Kapalı</string>
+    <string name="home_state_on">Açık</string>
+    <string name="home_state_starting">Başlatılıyor</string>
+    <string name="home_state_stopping">Durduruluyor</string>
+    <string name="home_state_waiting">Adaptör bekleniyor</string>
+    <string name="home_state_unknown">Bilinmiyor</string>
+    <string name="home_status_description">Ethernet paylaşımı: %1$s</string>
+    <string name="home_line_profile">Profil: %1$s</string>
+    <string name="home_line_interface">Arayüz %1$s, %2$s</string>
+    <string name="home_line_addresses">Telefon adresi: %1$s</string>
+    <string name="home_line_clients">Bağlı cihaz: %1$s</string>
+    <string name="home_line_adapter">Adaptör: %1$s</string>
+    <string name="home_line_adapter_cable">Adaptör: %1$s, kablo bağlı</string>
+    <string name="home_line_adapter_cable_speed">Adaptör: %1$s, kablo bağlı, hız (Mbit/s): %2$d</string>
+    <string name="home_line_adapter_no_cable">Adaptör: %1$s, kablo yok</string>
+    <string name="home_line_adapter_none">Ethernet adaptörü bulunamadı</string>
+    <string name="home_line_adapter_unknown">Adaptör: henüz bilinmiyor</string>
+    <string name="home_line_other_adapter">Kullanılmıyor: %1$s. Android aynı anda tek bir adaptörü kullanır.</string>
+    <string name="home_line_shizuku_ready">Shizuku: hazır</string>
+    <string name="home_line_shizuku_not_ready">Shizuku: hazır değil</string>
+    <string name="home_start_description">Başlat, profil: %1$s</string>
+    <string name="home_waiting">Adaptör bekleniyor.</string>
+    <string name="home_waiting_next">Adaptörü takın. Android, adaptör görünür görünmez onu kullanmaya başlar.</string>
+    <string name="home_unknown">Shizuku durdu, bu yüzden EtherTether Ethernet paylaşımını göremiyor ve durduramıyor. Paylaşım hâlâ açık olabilir.</string>
+    <string name="home_unknown_next">Shizuku\'yu yeniden başlatın, paylaşım açıksa Durdur\'a dokunun. Ya da Ethernet paylaşımını Android ayarlarından kapatın.</string>
+    <string name="home_adapter_back">Adaptör yeniden takıldı.</string>
+    <string name="home_adapter_back_next">Çıkarılması paylaşımı sonlandırdı. Yeniden kullanmak için Başlat\'a dokunun.</string>
+    <string name="home_started_with_notes">Paylaşım başlatıldı.</string>
+    <string name="home_profile_title">Profil</string>
+    <string name="home_profile_locked">Profili değiştirmek için paylaşımı durdurun.</string>
+    <string name="home_no_profiles">Henüz profil yok. “Profilleri yönet” bölümünden bir tane oluşturun.</string>
+    <string name="scope_local">yalnızca yerel</string>
+    <string name="scope_shared">internet bağlantısı paylaşılıyor</string>
+
+    <!-- Bekçi -->
+    <string name="alert_adapter_removed">Adaptör çıkarıldı</string>
+    <string name="alert_adapter_removed_text">Adaptörün çıkarılması %1$s için Ethernet paylaşımını sonlandırır. Adaptörü yeniden takın ve Başlat\'a dokunun.</string>
+    <string name="alert_stopped_outside">Ethernet paylaşımı durdu</string>
+    <string name="alert_stopped_outside_text">%1$s için paylaşım EtherTether dışında, örneğin Ayarlar\'da durduruldu.</string>
+    <string name="alert_rearm_failed">Yeniden başlatılamadı</string>
+    <string name="alert_rearm_failed_text">EtherTether, adaptör çıkarıldıktan sonra yeniden başlatamadı: %1$s. Ayrıntılar için uygulamayı açın.</string>
+    <string name="event_adapter_removed_next">Adaptörü yeniden takın ve Başlat\'a dokunun. Bunun kendiliğinden olması için Ayarlar\'da “Hazır tut” seçeneğini açın.</string>
+    <string name="event_stopped_outside_next">Yeniden açmak için Başlat\'a dokunun.</string>
+    <string name="event_rearm_failed_next">Shizuku\'nun çalıştığını kontrol edin, sonra Başlat\'a dokunun. Ayrıntılar günlükte.</string>
+
+    <!-- Profiller -->
+    <string name="profiles_title">Profiller</string>
+    <string name="profiles_new">Yeni profil</string>
+    <string name="profiles_select">Kullan</string>
+    <string name="profiles_edit">Düzenle</string>
+    <string name="profiles_duplicate">Çoğalt</string>
+    <string name="profiles_delete">Sil</string>
+    <string name="profiles_selected">Başlat, kutucuk ve widget için kullanılır</string>
+    <string name="profiles_action_description">%1$s %2$s</string>
+    <string name="profiles_copy_name">%1$s (kopya)</string>
+    <string name="profiles_delete_title">Bu profil silinsin mi?</string>
+    <string name="profiles_delete_text">%1$s silinecek. Bu işlem geri alınamaz.</string>
+    <string name="profiles_import">Profilleri içe aktar</string>
+    <string name="profiles_export">Profilleri dışa aktar</string>
+    <string name="profiles_import_hint">İçe ve dışa aktarma küçük bir JSON dosyası kullanır. İçe aktarılan profiller kontrol edilir; geçersiz olanlar atlanır.</string>
+    <!-- %1$s is profiles_added, %2$s is profiles_skipped. -->
+    <string name="profiles_imported">%1$s %2$s</string>
+    <plurals name="profiles_added">
+        <item quantity="one">%1$d profil eklendi.</item>
+        <item quantity="other">%1$d profil eklendi.</item>
+    </plurals>
+    <plurals name="profiles_skipped">
+        <item quantity="one">%1$d atlandı.</item>
+        <item quantity="other">%1$d atlandı.</item>
+    </plurals>
+    <string name="profiles_import_not_a_file">Bu bir EtherTether profil dosyası değil.</string>
+    <string name="profiles_import_newer">Bu dosya EtherTether\'in daha yeni bir sürümünden. Önce uygulamayı güncelleyin.</string>
+    <string name="profiles_exported">Profiller dışa aktarıldı.</string>
+    <string name="profiles_export_failed">Dosya yazılamadı.</string>
+    <string name="profiles_full">Profil listesi dolu. En fazla: %1$d.</string>
+    <string name="profile_unnamed">Adsız profil</string>
+    <string name="profile_summary_static">Sabit %1$s, cihaz %2$s, %3$s</string>
+    <string name="profile_summary_dhcp">Normal DHCP, %1$s</string>
+    <string name="preset_car">Araç ENET link-local 169.254.0.42/16</string>
+    <string name="preset_laptop">USB-C Ethernet üzerinden internetli dizüstü bilgisayar</string>
+    <string name="preset_lab">Yalıtılmış laboratuvar ağı</string>
+    <string name="editor_new_title">Yeni profil</string>
+    <string name="editor_edit_title">Profili düzenle</string>
+    <string name="editor_name">Ad</string>
+    <string name="editor_name_hint">En fazla uzunluk: %1$d.</string>
+    <string name="editor_name_preset_hint">Hazır adı korumak için boş bırakın: %1$s.</string>
+    <string name="form_dhcp_explained">Android, normal Ethernet paylaşımında olduğu gibi özel bir alt ağı kendisi seçer ve adresleri DHCP ile dağıtır.</string>
+    <string name="form_scope_local_explained">Yalnızca yerel: kablodaki cihaz telefona ulaşır, ancak internete ulaşamaz.</string>
+    <string name="form_scope_share_explained">İnterneti paylaş: kablodaki cihaz telefonun internet bağlantısını kullanır. Android 11 her zaman paylaşır.</string>
+
+    <!-- Günlük -->
+    <string name="log_title">Günlük</string>
+    <string name="log_privacy">Günlük bu telefonda kalır. Arayüz adları ve adresler içerebilir; paylaşmadan önce kontrol edin.</string>
+    <string name="log_filter_all">Tümü</string>
+    <string name="log_filter_problems">Uyarılar ve hatalar</string>
+    <string name="log_search">Ara</string>
+    <string name="log_export">Dışa aktar</string>
+    <string name="log_copy">Kopyala</string>
+    <string name="log_clear">Temizle</string>
+    <string name="log_clear_title">Günlük temizlensin mi?</string>
+    <string name="log_clear_text">Tüm kayıtlar bu telefondan silinecek.</string>
+    <!-- The quantity is the total (%2$d). -->
+    <plurals name="log_count">
+        <item quantity="one">Gösterilen kayıt: %1$d / %2$d</item>
+        <item quantity="other">Gösterilen kayıt: %1$d / %2$d</item>
+    </plurals>
+    <string name="log_empty">Kayıt yok.</string>
+    <string name="log_level_info">Bilgi</string>
+    <string name="log_level_warning">Uyarı</string>
+    <string name="log_level_error">Hata</string>
+
+    <!-- Ayarlar -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_access">Ayrıcalıklı erişim</string>
+    <string name="settings_backend_only_shizuku">Bu sürüm, kablosuz hata ayıklama veya ADB ile başlatılan Shizuku\'yu kullanır.</string>
+    <string name="settings_automation">Otomatik çalıştırma</string>
+    <string name="settings_keep_armed">Hazır tut</string>
+    <string name="settings_keep_armed_summary">Adaptörün çıkarılması Ethernet paylaşımını sonlandırır. Bu açıkken EtherTether hemen yeniden istekte bulunur, böylece takılan bir sonraki adaptör kendiliğinden kullanılır.</string>
+    <string name="settings_boot">Telefon yeniden başlayınca başlat</string>
+    <string name="settings_boot_summary">Telefon yeniden başladıktan sonra EtherTether Shizuku\'yu en fazla beş dakika bekler, ardından seçili profili hazır hale getirir.</string>
+    <string name="settings_automation_limits">Android buna yalnızca EtherTether bildirimini gösterirken izin verir. Hazır durumdayken her Ethernet adaptörü paylaşım için kullanılır, bu yüzden telefon kablolu bir ağı kendisi kullanamaz. Shizuku çalışıyor olmalıdır: yeniden başlatmadan sonra onu tekrar başlatın (Shizuku 13.6 ve sonrası, Android 13 ve sonrasında güvenilir bir Wi-Fi ağında kendiliğinden başlayabilir).</string>
+    <string name="settings_vendor_hint">Xiaomi, Redmi ve POCO telefonlarda EtherTether ve Shizuku için Otomatik başlatma iznini verin ve Pil tasarrufu ayarını “Kısıtlama yok” yapın, yoksa sistem bunları durdurabilir.</string>
+    <string name="settings_unused_hint">Android, birkaç ay açılmayan uygulamaların izinlerini kaldırabilir; o zaman otomatik çalıştırma da durur. Bunu EtherTether için kapatın.</string>
+    <string name="settings_unused_open">Ayarı aç</string>
+    <string name="settings_open_app_settings">Uygulama ayarlarını aç</string>
+    <string name="settings_notifications">Bildirimler</string>
+    <string name="settings_alerts">Paylaşım durunca uyar</string>
+    <string name="settings_alerts_summary">Adaptör çıkarıldığında veya paylaşım EtherTether dışında durdurulduğunda haber verir.</string>
+    <string name="settings_notifications_off">EtherTether için bildirimler kapalı. Durdur düğmesini ve uyarıları uygulama dışında göremezsiniz.</string>
+    <string name="settings_allow_notifications">Bildirimlere izin ver</string>
+    <string name="settings_appearance">Görünüm</string>
+    <string name="theme_system">Telefona uy</string>
+    <string name="theme_light">Açık</string>
+    <string name="theme_dark">Koyu</string>
+    <string name="settings_dynamic_color">Duvar kağıdından renkler</string>
+    <string name="settings_dynamic_color_summary">Duvar kağıdının renklerini kullanır (Android 12 ve sonrası).</string>
+    <string name="settings_language">Dil</string>
+    <string name="language_system">Telefon dili</string>
+    <string name="settings_show_intro">Tanıtımı yeniden göster</string>
+
+    <!-- Hakkında -->
+    <string name="about_title">Hakkında</string>
+    <string name="about_version">Sürüm %1$s (%2$d), derleme: %3$s</string>
+    <string name="about_owner">Telif hakkı 2026 Oytun Cagil Koltuk</string>
+    <string name="about_license_title">Lisans</string>
+    <string name="about_license">EtherTether, tercihinize göre Apache License 2.0 veya GNU General Public License 3.0 ya da sonraki sürümleri kapsamında özgür bir yazılımdır. Seçtiğiniz lisansın koşullarına göre kullanabilir, paylaşabilir ve değiştirebilirsiniz.</string>
+    <string name="about_libraries">Açık kaynak kütüphaneler</string>
+    <string name="about_source_title">Kaynak kod</string>
+    <string name="about_open_source">Tarayıcıda aç</string>
+    <string name="about_signing_title">İmza sertifikası</string>
+    <string name="about_signing_official">Bu uygulama resmi EtherTether sürüm anahtarıyla imzalanmıştır.</string>
+    <string name="about_signing_other">Bu uygulama resmi EtherTether sürüm anahtarıyla imzalanmamıştır.</string>
+    <string name="about_privacy_title">Gizlilik</string>
+    <string name="about_privacy">EtherTether\'in internet izni yoktur ve hiçbir şey toplamaz. Günlük, dışa aktarılana kadar bu telefonda kalır.</string>
+
+    <!-- Tanıtım -->
+    <string name="onboarding_skip">Atla</string>
+    <string name="onboarding_next">İleri</string>
+    <string name="onboarding_finish">EtherTether\'i kullanmaya başla</string>
+    <string name="onboarding_page">Sayfa %1$d / %2$d</string>
+    <string name="onboarding_welcome_title">Ethernet paylaşımı, istediğiniz gibi</string>
+    <string name="onboarding_welcome_text">EtherTether, bir USB veya USB-C Ethernet adaptörü için Android\'in kendi Ethernet paylaşımını başlatır: teşhis arayüzleri veya laboratuvar ekipmanı gibi cihazlar için seçtiğiniz sabit bir adresle ya da normal paylaşımla. Durdur her şeyi normale döndürür.</string>
+    <string name="onboarding_shizuku_title">Erişimi Shizuku sağlar</string>
+    <string name="onboarding_shizuku_text">Android, sabit adresli paylaşımı yalnızca sistemin ve hata ayıklama shell\'inin başlatmasına izin verir. Ücretsiz ve ayrı bir uygulama olan Shizuku, kablosuz hata ayıklama ile başlatıldıktan sonra shell\'in yetkileriyle çalışır; yalnızca telefonda, bilgisayar gerekmeden.</string>
+    <string name="onboarding_setup_steps">Adımları göster</string>
+    <string name="onboarding_adapter_title">Adaptörü test edin</string>
+    <string name="onboarding_adapter_text">USB veya USB-C Ethernet adaptörünü takın ve “Adaptörü kontrol et” düğmesine dokunun. Bu test için kablo gerekmez.</string>
+    <string name="onboarding_adapter_needs_shizuku">Shizuku hazır olduğunda adaptör kontrol edilebilir.</string>
+    <string name="onboarding_check_adapter">Adaptörü kontrol et</string>
+    <string name="onboarding_done_title">Hazır</string>
+    <string name="onboarding_done_text">Bir profil seçin ve Başlat\'a dokunun. Hızlı Ayarlar kutucuğundan ve ana ekran widget\'ından da başlatıp durdurabilirsiniz.</string>
+
+    <!-- Bildirim, kutucuk, widget -->
+    <string name="channel_ongoing">Paylaşım durumu</string>
+    <string name="channel_ongoing_description">Ethernet paylaşımı çalışırken veya adaptörü beklerken Durdur düğmesiyle birlikte gösterilir.</string>
+    <string name="channel_alerts">Uyarılar</string>
+    <string name="channel_alerts_description">Adaptör çıkarıldığında veya paylaşım EtherTether dışında durduğunda.</string>
+    <string name="notification_on">Ethernet paylaşımı açık</string>
+    <string name="notification_waiting">Adaptör bekleniyor</string>
+    <string name="notification_rearming">Yeniden hazırlanıyor</string>
+    <string name="notification_starting">Ethernet paylaşımı başlatılıyor</string>
+    <string name="notification_stopping">Ethernet paylaşımı durduruluyor</string>
+    <string name="notification_text_local">%1$s, %2$s, yalnızca yerel</string>
+    <string name="notification_text_shared">%1$s, %2$s, internet bağlantısı paylaşılıyor</string>
+    <string name="tile_label">Ethernet paylaşımı</string>
+    <string name="tile_needs_shizuku">Shizuku gerekli</string>
+    <string name="tile_waiting">Adaptör bekleniyor</string>
+    <string name="widget_label">Ethernet paylaşımı</string>
+    <string name="widget_description">Seçili profille Ethernet paylaşımını başlatın ve durdurun.</string>
+    <string name="widget_on">Paylaşım açık</string>
+    <string name="widget_off">Paylaşım kapalı</string>
+    <string name="widget_waiting">Adaptör bekleniyor</string>
+    <string name="widget_needs_shizuku">Shizuku gerekli</string>
+    <string name="widget_button_description">%1$s, profil %2$s</string>
+</resources>

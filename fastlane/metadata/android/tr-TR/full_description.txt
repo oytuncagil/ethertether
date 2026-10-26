@@ -1,0 +1,21 @@
+EtherTether, Android'in kendi Ethernet paylaşımını her USB veya USB-C Ethernet adaptörü için başlatır ve durdurur: seçtiğiniz sabit bir IPv4 adresiyle ya da Android'in normal DHCP paylaşımıyla.
+
+Örneğin yalnızca link-local adreslerle çalışan cihazlar için kullanın: araç ENET teşhis kabloları, laboratuvar cihazları ve gömülü sistem kartları. Ya da telefonun bağlantısını bir dizüstü bilgisayarla kablo üzerinden paylaşın.
+
+Özellikler:
+* Sabit telefon adresi, bir istemci adresi ve önek uzunluğu; hiçbir şey gönderilmeden önce kontrol edilir
+* Yalnızca yerel ağ (varsayılan) ya da telefonun internet bağlantısını paylaşma
+* Profiller: üç hazır profil ve kendi profilleriniz, içe ve dışa aktarma ile
+* Hazır tut: adaptör yeniden takıldığında paylaşım kendiliğinden yeniden başlar
+* Telefon yeniden başladıktan sonra otomatik başlatma, Hızlı Ayarlar kutucuğu, ana ekran widget'ı ve Durdur düğmeli bildirim
+* Canlı durum: arayüz, adresler, bağlı cihaz ve adaptör
+* Bir sonraki adımı söyleyen anlaşılır hata mesajları ve telefonda kalan bir günlük
+* İngilizce, Türkçe ve Almanca
+
+Gereksinimler: Android 11 veya üstü, Shizuku (bilgisayar gerekmeden kablosuz hata ayıklama ile ya da ADB ile başlatılır) ve Android'in tanıdığı bir Ethernet adaptörü. Uygulama, Shizuku kurulumunda size adım adım yol gösterir.
+
+Gizlilik: internet izni yok, analitik veya izleme yok, reklam yok, hesap yok. Günlük yalnızca siz dışa aktardığınızda telefondan çıkar.
+
+Nasıl çalışır: EtherTether, Shizuku'nun sağladığı shell kimliğiyle Android'in paylaşım hizmetinden Ethernet paylaşımını sizin ayarlarınızla başlatmasını ister. Başka hiçbir şeyi değiştirmez: yönlendirme tabloları, DNS, Wi-Fi, mobil veri veya güvenlik duvarı kurallarına dokunmaz.
+
+EtherTether özgür yazılımdır: Apache Lisansı 2.0 veya GNU Genel Kamu Lisansı 3.0 (ya da daha yeni bir sürümü) arasından istediğinizi seçebilirsiniz.

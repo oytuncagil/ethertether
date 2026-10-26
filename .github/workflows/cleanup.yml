@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+#
+# Deletes stored workflow artifacts (APKs and test reports of earlier runs) so new runs have room
+# again: a private repository has a small artifact storage. Run by hand only (Actions, Clean up
+# artifacts, Run workflow). Signed releases are not artifacts and stay untouched.
+
+name: Clean up artifacts
+
+on:
+  workflow_dispatch:
+    inputs:
+      older_than_hours:
+        description: "Delete artifacts older than this many hours (0 deletes all)"
+        required: true
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: write
+    steps:
+      - name: Delete artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          HOURS: ${{ inputs.older_than_hours }}
+        run: |
+          case "$HOURS" in ''|*[!0-9]*) echo "::error::older_than_hours must be a whole number"; exit 1 ;; esac
+          cutoff=$(date -u -d "-$HOURS hours" +%s)
+          deleted=0
+          kept=0
+          while read -r id created name size; do
+            [ -z "$id" ] && continue
+            if [ "$(date -u -d "$created" +%s)" -le "$cutoff" ]; then
+              gh api -X DELETE "repos/$REPO/actions/artifacts/$id" > /dev/null
+              echo "deleted $name ($size bytes, $created)"
+              deleted=$((deleted + 1))
+            else
+              kept=$((kept + 1))
+            fi
+          done < <(gh api --paginate "repos/$REPO/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.expired | not) | "\(.id) \(.created_at) \(.name) \(.size_in_bytes)"')
+          echo "deleted $deleted artifacts, kept $kept"

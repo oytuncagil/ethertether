@@ -1,0 +1,191 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+#
+# Builds, signs and drafts a GitHub release for a version tag (docs/RELEASING.md). It runs when a
+# tag is pushed, or from the Actions tab ("Run workflow") with the version typed in, on the chosen
+# branch; then the tag is created on that commit when the draft is published. A push to a
+# branch release-test/<version> tests the process before merging; it accepts pre-release
+# versions only (release-test/0.1.0-test.1).
+# vX.Y.Z must match appVersion in app/build.gradle.kts. A tag with a suffix (v0.1.0-test.1,
+# v1.2.0-rc.1) becomes a pre-release; only such a tag may be signed with a throwaway key when the
+# release key secrets are missing, so the process can be tested before the key exists. The release
+# stays a draft and is published by hand.
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+    branches: ["release-test/**"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version without v, for example 1.0.0 or 1.0.0-rc.1"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Tag and version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            tag="v${INPUT_VERSION#v}"
+          elif [ "${GITHUB_REF#refs/heads/release-test/}" != "$GITHUB_REF" ]; then
+            tag="v${GITHUB_REF#refs/heads/release-test/}"
+            case "$tag" in *-*) ;; *) echo "::error::a release-test branch takes a pre-release version only"; exit 1 ;; esac
+          else
+            tag="${GITHUB_REF_NAME}"
+          fi
+          version="${tag#v}"
+          base="${version%%-*}"
+          app=$(sed -n 's/^val appVersion = "\(.*\)"$/\1/p' app/build.gradle.kts)
+          if ! echo "$base" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::tag $tag is not vX.Y.Z or vX.Y.Z-suffix"; exit 1
+          fi
+          if [ "$base" != "$app" ]; then
+            echo "::error::tag $tag does not match appVersion $app in app/build.gradle.kts"; exit 1
+          fi
+          prerelease=false
+          [ "$version" != "$base" ] && prerelease=true
+          {
+            echo "tag=$tag"
+            echo "version=$version"
+            echo "base=$base"
+            echo "prerelease=$prerelease"
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install SDK packages
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses > /dev/null
+          "$SDKMANAGER" "platforms;android-37.0" "build-tools;37.0.0"
+
+      # A release is built from scratch, without the shared Gradle build cache.
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-disabled: true
+
+      - name: Release key
+        id: key
+        env:
+          RELEASE_KEYSTORE_BASE64: ${{ secrets.RELEASE_KEYSTORE_BASE64 }}
+          PRERELEASE: ${{ steps.version.outputs.prerelease }}
+        run: |
+          keystore="$RUNNER_TEMP/release.p12"
+          if [ -n "$RELEASE_KEYSTORE_BASE64" ]; then
+            echo "$RELEASE_KEYSTORE_BASE64" | base64 -d > "$keystore"
+            echo "kind=release" >> "$GITHUB_OUTPUT"
+          elif [ "$PRERELEASE" = "true" ]; then
+            echo "::warning::release key secrets missing: signing this test pre-release with a throwaway key"
+            password=$(openssl rand -hex 24)
+            echo "::add-mask::$password"
+            keytool -genkeypair -keystore "$keystore" -storetype PKCS12 -alias throwaway -keyalg RSA -keysize 4096 \
+              -validity 7 -dname "CN=EtherTether throwaway test key" -storepass "$password" -keypass "$password" > /dev/null
+            echo "kind=throwaway" >> "$GITHUB_OUTPUT"
+            echo "THROWAWAY_PASSWORD=$password" >> "$GITHUB_ENV"
+          else
+            echo "::error::release key secrets missing; see docs/RELEASING.md"; exit 1
+          fi
+          echo "file=$keystore" >> "$GITHUB_OUTPUT"
+
+      - name: Tests, lint, signed release build and checks
+        env:
+          RELEASE_KEYSTORE_FILE: ${{ steps.key.outputs.file }}
+          RELEASE_KEYSTORE_PASSWORD: ${{ steps.key.outputs.kind == 'release' && secrets.RELEASE_KEYSTORE_PASSWORD || env.THROWAWAY_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ steps.key.outputs.kind == 'release' && secrets.RELEASE_KEY_ALIAS || 'throwaway' }}
+          RELEASE_KEY_PASSWORD: ${{ steps.key.outputs.kind == 'release' && secrets.RELEASE_KEY_PASSWORD || env.THROWAWAY_PASSWORD }}
+        run: ./gradlew testDebugUnitTest :model:test lint assembleRelease verifyReleasePermissions verifyReleaseKeepRules
+
+      - name: Remove the keystore
+        if: always()
+        run: rm -f "$RUNNER_TEMP/release.p12"
+
+      # v2 and v3 signatures (v1 is not needed from Android 7, and the app needs Android 11), and
+      # the certificate published in gradle.properties when the release key was used.
+      - name: Verify the signature
+        id: verify
+        env:
+          KIND: ${{ steps.key.outputs.kind }}
+        run: |
+          apk=app/build/outputs/apk/release/app-release.apk
+          apksigner="$ANDROID_HOME/build-tools/37.0.0/apksigner"
+          out=$("$apksigner" verify --min-sdk-version 24 --verbose --print-certs "$apk")
+          echo "$out" | grep -q "Verified using v2 scheme (APK Signature Scheme v2): true" || { echo "::error::no v2 signature"; exit 1; }
+          echo "$out" | grep -q "Verified using v3 scheme (APK Signature Scheme v3): true" || { echo "::error::no v3 signature"; exit 1; }
+          digest=$(echo "$out" | sed -n 's/.*Signer.*certificate SHA-256 digest: //p' | head -n 1)
+          expected=$(sed -n 's/^ethertether.releaseCertSha256=//p' gradle.properties | tr -d ':' | tr 'A-F' 'a-f')
+          if [ "$KIND" = "release" ] && [ -n "$expected" ] && [ "$digest" != "$expected" ]; then
+            echo "::error::signed with $digest, but gradle.properties publishes $expected"; exit 1
+          fi
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
+
+      - name: Files, checksums and notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          BASE: ${{ steps.version.outputs.base }}
+          KIND: ${{ steps.key.outputs.kind }}
+          DIGEST: ${{ steps.verify.outputs.digest }}
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk "dist/EtherTether-$VERSION.apk"
+          (cd dist && sha256sum EtherTether-*.apk > SHA256SUMS)
+          {
+            if [ "$KIND" = "throwaway" ]; then
+              echo "**Test build signed with a throwaway key, not the release key. Do not install it for normal use.**"
+              echo
+            fi
+            python3 scripts/release_notes.py "$BASE"
+            echo
+            echo "Signing certificate SHA-256: \`$DIGEST\`"
+            echo
+            echo "Check the download with \`sha256sum -c SHA256SUMS\`. How to verify the signature and rebuild the APK yourself: docs/RELEASING.md."
+          } > dist/notes.md
+          cat dist/SHA256SUMS
+
+      # The draft release holds the files; this copy is only for checking a run, so a full artifact
+      # storage must not stop the release.
+      - uses: actions/upload-artifact@v7
+        continue-on-error: true
+        with:
+          name: release-${{ steps.version.outputs.version }}
+          path: dist/
+          retention-days: 7
+
+      - name: Draft GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+          PRERELEASE: ${{ steps.version.outputs.prerelease }}
+        run: |
+          # A pushed tag exists; otherwise the tag is made on this commit when the draft is published.
+          if [ "${GITHUB_REF#refs/tags/}" != "$GITHUB_REF" ]; then
+            flags="--draft --verify-tag"
+          else
+            flags="--draft --target $GITHUB_SHA"
+          fi
+          [ "$PRERELEASE" = "true" ] && flags="$flags --prerelease"
+          # shellcheck disable=SC2086
+          gh release create "$TAG" $flags --title "EtherTether $VERSION" --notes-file dist/notes.md \
+            "dist/EtherTether-$VERSION.apk" dist/SHA256SUMS

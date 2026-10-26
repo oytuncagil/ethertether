@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+<resources>
+    <!-- Tethering-Karte -->
+    <string name="tethering_title">Ethernet-Tethering</string>
+    <string name="action_start">Starten</string>
+
+    <!-- Bereich Zugriffsweg -->
+    <string name="action_refresh">Erneut prüfen</string>
+    <string name="action_grant">Zugriff erlauben</string>
+    <string name="action_grant_for">Zugriff für %1$s erlauben</string>
+    <string name="backend_row_description">%1$s: %2$s. %3$s</string>
+
+    <string name="backend_shizuku">Shizuku</string>
+    <string name="backend_sui">Sui</string>
+    <string name="backend_root">Root</string>
+
+    <string name="state_not_installed">Nicht installiert</string>
+    <string name="state_not_running">Installiert, läuft nicht</string>
+    <string name="state_permission_required">Läuft, Zugriff nicht erlaubt</string>
+    <string name="state_su_found">su gefunden</string>
+    <string name="state_ready_shell">Bereit, läuft als Shell</string>
+    <string name="state_ready_root">Bereit, läuft als Root</string>
+    <string name="state_ready_uid">Bereit, läuft als UID %1$d</string>
+    <string name="state_failed">Prüfung fehlgeschlagen</string>
+
+    <string name="hint_shizuku_not_installed">Installieren Sie Shizuku und starten Sie es dann mit kabellosem Debugging. Ein Computer ist nicht nötig.</string>
+    <string name="hint_shizuku_not_running">Öffnen Sie Shizuku und starten Sie es mit kabellosem Debugging.</string>
+    <string name="hint_permission_required">Tippen Sie auf Zugriff erlauben und erlauben Sie EtherTether.</string>
+    <string name="hint_shizuku_ready_root">Shizuku läuft als Root. Diese Version braucht Shizuku, das mit kabellosem Debugging oder ADB gestartet wurde.</string>
+    <string name="hint_ready">Nichts zu tun.</string>
+    <string name="hint_sui_not_installed">Optional. Erfordert ein gerootetes Telefon mit dem Sui-Modul.</string>
+    <string name="hint_root_not_found">Optional. Erfordert ein gerootetes Telefon.</string>
+    <string name="hint_root_available">Root-Zugriff wird nur angefragt, wenn Sie Root auswählen.</string>
+    <string name="hint_failed">Details: %1$s</string>
+
+    <string name="action_open_setup">Shizuku einrichten</string>
+
+    <!-- Entwicklerschalter -->
+    <string name="developer_title">Entwickler</string>
+    <string name="developer_switch">Entwicklerschalter</string>
+    <string name="developer_switch_summary">Zeigt den Debug-Bildschirm der Engine für Tests auf einem echten Telefon.</string>
+    <string name="action_open_debug">Debug-Bildschirm öffnen</string>
+
+    <!-- Inhaltsbeschreibungen -->
+    <string name="cd_state_ok">nutzbar</string>
+    <string name="cd_state_action">Aktion erforderlich</string>
+    <string name="cd_state_absent">nicht verfügbar</string>
+</resources>

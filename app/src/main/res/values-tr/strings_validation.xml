@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+İstek doğrulaması mesajları.
+-->
+<resources>
+    <string name="error_phone_invalid">169.254.0.42 gibi bir IPv4 adresi girin.</string>
+    <string name="error_phone_unusable">Bu adres bir ağ bağlantısında kullanılamaz.</string>
+    <string name="error_phone_network">Bu, alt ağın ağ adresi; başka bir ana bilgisayar adresi seçin.</string>
+    <string name="error_phone_broadcast">Bu, alt ağın yayın adresi; başka bir ana bilgisayar adresi seçin.</string>
+    <string name="error_client_invalid">169.254.0.1 gibi bir IPv4 adresi girin.</string>
+    <string name="error_client_unusable">Bu adres bir ağ bağlantısında kullanılamaz.</string>
+    <string name="error_client_network">Bu, alt ağın ağ adresi; başka bir ana bilgisayar adresi seçin.</string>
+    <string name="error_client_broadcast">Bu, alt ağın yayın adresi; başka bir ana bilgisayar adresi seçin.</string>
+    <string name="error_client_same">İstemcinin telefondan farklı bir adresi olmalı.</string>
+    <string name="error_client_other_subnet">İstemci adresi, telefon adresiyle aynı alt ağda olmalı.</string>
+    <string name="error_prefix_invalid">16 ile 30 arasında bir önek uzunluğu girin.</string>
+    <string name="error_prefix_too_short">Android\'in DHCP sunucusu yalnızca /16 ile /30 arasını kabul eder. En büyük ağ için /16 kullanın.</string>
+    <string name="error_prefix_too_long">/30\'un üstünde iki adres için yer kalmaz. /30 veya daha küçüğünü kullanın.</string>
+    <string name="warning_public_range">Bunlar herkese açık internet adresleri. Yalnızca cihazın bunlara ihtiyaç duyduğunu biliyorsanız kullanın.</string>
+    <string name="warning_reserved_range">Bu adresler belgeleme, test veya operatör ağları için ayrılmıştır.</string>
+    <string name="warning_overlaps">Bu alt ağ, telefonun zaten kullandığı bir ağla çakışıyor; bu, o bağlantıyı bozabilir.</string>
+    <string name="action_use_prefix">/%1$d kullan</string>
+</resources>

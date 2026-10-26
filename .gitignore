@@ -1,0 +1,41 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+# Local notes, never published.
+/EtherTether_*.md
+
+# Signing material and local machine settings never enter the repository.
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+local.properties
+
+# Gradle and build output
+.gradle/
+.kotlin/
+build/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.hprof
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.cxx/
+.externalNativeBuild/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+__pycache__/

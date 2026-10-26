@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Lint runs with warnings as errors. Every exception below has a reason.
+-->
+<lint>
+    <!-- Versions are pinned in gradle/libs.versions.toml and updated through Dependabot pull
+         requests, so a new release upstream must not break the build. -->
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="NewerVersionAvailable" severity="ignore" />
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
+    <!-- targetSdk stays at 36 for now; compileSdk is 37. -->
+    <issue id="OldTargetApi" severity="ignore" />
+    <!-- The engine reaches hidden tethering APIs on purpose, through the privileged identity
+         the user granted. Each use is listed in docs/ARCHITECTURE.md. -->
+    <issue id="PrivateApi" severity="ignore" />
+    <issue id="DiscouragedPrivateApi" severity="ignore" />
+    <issue id="BlockedPrivateApi" severity="ignore" />
+    <issue id="SoonBlockedPrivateApi" severity="ignore" />
+</lint>

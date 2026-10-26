@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Geführte Shizuku-Einrichtung und die Meldungen zur Bereitschaft von Shizuku.
+-->
+<resources>
+    <!-- Bereitschaft -->
+    <string name="readiness_not_installed">Shizuku ist nicht installiert.</string>
+    <string name="readiness_not_installed_next">Installieren Sie Shizuku von der offiziellen Seite und starten Sie es dann mit kabellosem Debugging.</string>
+    <string name="readiness_not_running">Shizuku ist installiert, läuft aber nicht.</string>
+    <string name="readiness_not_running_next">Öffnen Sie Shizuku und starten Sie es. Nach jedem Neustart des Telefons muss es erneut gestartet werden.</string>
+    <string name="readiness_sui">Sui ist aktiv. Diese Version von EtherTether funktioniert nur mit Shizuku.</string>
+    <string name="readiness_sui_next">Verwenden Sie Shizuku, gestartet mit kabellosem Debugging.</string>
+    <string name="readiness_too_old">Shizuku ist zu alt (API-Version %1$d).</string>
+    <string name="readiness_too_old_next">Aktualisieren Sie Shizuku über die offizielle Seite.</string>
+    <string name="readiness_permission">EtherTether hat noch keinen Zugriff auf Shizuku.</string>
+    <string name="readiness_permission_next">Tippen Sie auf Zugriff erlauben und erlauben Sie EtherTether.</string>
+    <string name="readiness_denied">Der Zugriff auf Shizuku wurde verweigert.</string>
+    <string name="readiness_denied_next">Öffnen Sie Shizuku, suchen Sie EtherTether in der App-Liste und erlauben Sie den Zugriff.</string>
+    <string name="readiness_root">Shizuku läuft als Root.</string>
+    <string name="readiness_root_next">Diese Version braucht Shizuku, das mit kabellosem Debugging oder ADB gestartet wurde. Beenden Sie Shizuku und starten Sie es mit kabellosem Debugging.</string>
+    <string name="readiness_uid">Shizuku läuft als UID %1$d.</string>
+    <string name="readiness_ready">Shizuku ist bereit. EtherTether kann das Ethernet-Tethering steuern.</string>
+
+    <!-- Einrichtungsbildschirm -->
+    <string name="setup_title">Shizuku einrichten</string>
+    <string name="setup_status_title">Aktueller Status</string>
+    <string name="setup_what_title">Was Shizuku ist</string>
+    <string name="setup_what_body">Shizuku ist eine kostenlose App, mit der andere Apps Systemfunktionen mit den Rechten der Debugging-Shell nutzen können. EtherTether braucht sie für genau eine Sache: Android zu bitten, das Ethernet-Tethering zu starten oder zu beenden. Shizuku ist ein eigenständiges Projekt und kein Teil von EtherTether.</string>
+    <string name="setup_install_title">1. Shizuku installieren</string>
+    <string name="setup_install_body">Laden Sie Shizuku von der offiziellen Seite herunter. Die Seite wird in Ihrem Browser geöffnet.</string>
+    <string name="setup_install_done">Shizuku ist installiert.</string>
+    <string name="action_open_download">Offizielle Shizuku-Seite öffnen</string>
+    <string name="action_open_shizuku">Shizuku öffnen</string>
+    <string name="setup_start_title">2. Shizuku mit kabellosem Debugging starten</string>
+    <string name="setup_start_intro">Dafür ist kein Computer nötig. Das Koppeln ist nur einmal erforderlich.</string>
+    <string name="setup_step_wifi">Verbinden Sie das Telefon mit einem beliebigen WLAN. Kabelloses Debugging braucht WLAN, aber kein Internet.</string>
+    <string name="setup_step_developer">Aktivieren Sie die Entwickleroptionen: Öffnen Sie Einstellungen, Über das Telefon, und tippen Sie siebenmal auf Build-Nummer. Auf Xiaomi-Telefonen tippen Sie stattdessen auf OS-Version.</string>
+    <string name="setup_step_pairing">Öffnen Sie Shizuku und tippen Sie im Abschnitt zum kabellosen Debugging auf Kopplung. Shizuku zeigt eine Benachrichtigung an.</string>
+    <string name="setup_step_code">Öffnen Sie in den Entwickleroptionen Kabelloses Debugging, aktivieren Sie es und tippen Sie auf Gerät über einen Kopplungscode koppeln.</string>
+    <string name="setup_step_enter">Geben Sie den Kopplungscode in der Shizuku-Benachrichtigung ein.</string>
+    <string name="setup_step_start">Kehren Sie zu Shizuku zurück und tippen Sie auf Starten.</string>
+    <string name="setup_step_number">Schritt %1$d</string>
+    <string name="action_open_developer_options">Entwickleroptionen öffnen</string>
+    <string name="setup_grant_title">3. EtherTether erlauben</string>
+    <string name="setup_grant_body">Kehren Sie hierher zurück und tippen Sie auf Zugriff erlauben. Shizuku fragt Sie, ob Sie EtherTether erlauben möchten.</string>
+    <string name="setup_reboot_title">Nach jedem Neustart</string>
+    <string name="setup_reboot_body">Shizuku wird beendet, wenn das Telefon neu startet. Öffnen Sie Shizuku und tippen Sie erneut auf Starten. Ein erneutes Koppeln ist nicht nötig.</string>
+    <string name="setup_no_browser">Keine App kann die Seite öffnen. Die Adresse lautet shizuku.rikka.app/download.</string>
+    <string name="setup_no_settings">Die Entwickleroptionen konnten nicht geöffnet werden. Öffnen Sie sie über Einstellungen, System.</string>
+    <string name="action_back">Zurück</string>
+</resources>

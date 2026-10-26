@@ -1,0 +1,1 @@
+İlk genel sürüm: Shizuku ile Android'in Ethernet paylaşımı, seçtiğiniz sabit IPv4 adresiyle ya da normal DHCP ile, yalnızca yerel ya da internet paylaşımlı. Profiller, hazır tut, telefon yeniden başlayınca başlat, Hızlı Ayarlar kutucuğu, widget, Durdur düğmeli bildirim, telefonda kalan günlük; İngilizce, Türkçe ve Almanca.

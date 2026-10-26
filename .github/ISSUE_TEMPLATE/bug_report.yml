@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+name: Bug report
+description: Something does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. Please remove private data (serial numbers, addresses, names) from logs and screenshots before you post them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Plug in the adapter
+        2. Choose the profile ...
+        3. Tap Start
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: EtherTether version
+      description: Shown on the About screen (More options, About).
+    validations:
+      required: true
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model
+      placeholder: e.g. Pixel 8, Galaxy S24, Xiaomi 14
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version and system update
+      description: Settings, About phone. Include the Google Play system update date if shown.
+      placeholder: e.g. Android 16, Play system update 2026-09-01
+    validations:
+      required: true
+  - type: input
+    id: adapter
+    attributes:
+      label: Ethernet adapter
+      description: Brand and model, chipset if known (for example RTL8153, AX88179), and whether it is in a USB-C hub.
+    validations:
+      required: true
+  - type: dropdown
+    id: backend
+    attributes:
+      label: How Shizuku runs
+      options:
+        - Wireless debugging on the phone
+        - ADB from a computer
+        - Started with root
+        - Shizuku is not running or not installed
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Exported log
+      description: In the app, open the Log screen and tap Export. Attach the file or paste it here.
+      render: text
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, other apps that use the adapter, what you already tried.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Oytun Cagil Koltuk
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Onboarding: a phone with a shell prompt, for Shizuku. Drawn in one colour; the app tints it with the theme.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="80">
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M44,8 h32 a4,4 0 0 1 4,4 v56 a4,4 0 0 1 -4,4 h-32 a4,4 0 0 1 -4,-4 v-56 a4,4 0 0 1 4,-4 z" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M50,30 l6,5 l-6,5" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M60,41 h10" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M56,64 h8" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M22,40 a10,10 0 0 1 10,-10 M16,40 a16,16 0 0 1 16,-16" />
+    <path android:strokeColor="#FF000000" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M98,40 a10,10 0 0 0 -10,-10 M104,40 a16,16 0 0 0 -16,-16" />
+</vector>

@@ -1,0 +1,21 @@
+EtherTether startet und beendet das Ethernet-Tethering von Android für jeden USB- oder USB-C-Ethernet-Adapter: mit einer festen IPv4-Adresse Ihrer Wahl oder mit der normalen DHCP-Freigabe von Android.
+
+Nutzen Sie es für Geräte, die nur Link-Local-Adressen verwenden, etwa ENET-Diagnosekabel für Fahrzeuge, Laborgeräte und eingebettete Platinen, oder um die Verbindung des Telefons per Kabel mit einem Laptop zu teilen.
+
+Funktionen:
+* Feste Adresse für das Telefon, Client-Adresse und Präfixlänge; alles wird geprüft, bevor etwas gesendet wird
+* Nur lokal (Standard) oder mit geteilter Internetverbindung
+* Drei vorgefertigte und eigene Profile, mit Import und Export
+* Bereit halten: Das Tethering startet von selbst wieder, wenn der Adapter erneut eingesteckt wird
+* Automatischer Start nach einem Neustart, eine Kachel in den Schnelleinstellungen, ein Widget und eine Benachrichtigung mit der Schaltfläche „Beenden“
+* Live-Status: Schnittstelle, Adressen, verbundenes Gerät und Adapter
+* Verständliche Fehlermeldungen mit dem nächsten Schritt und ein Protokoll, das auf dem Telefon bleibt
+* Auf Englisch, Türkisch und Deutsch
+
+Voraussetzungen: Android 11 oder neuer, Shizuku (gestartet über kabelloses Debugging direkt auf dem Telefon oder über ADB) und ein Ethernet-Adapter, den Android erkennt. Die App führt Sie durch die Einrichtung von Shizuku.
+
+Datenschutz: keine Internetberechtigung, keine Analyse, keine Werbung, keine Konten. Das Protokoll verlässt das Telefon nur, wenn Sie es exportieren.
+
+So funktioniert es: Mit der Shell-Identität, die Shizuku bereitstellt, bittet EtherTether den Tethering-Dienst von Android, das Ethernet-Tethering mit Ihren Einstellungen zu starten. Sonst ändert es nichts: keine Routen, kein DNS, kein WLAN, keine mobilen Daten und keine Firewall-Regeln.
+
+EtherTether ist freie Software unter der Apache License 2.0 oder der GNU General Public License 3.0 oder neuer, ganz nach Ihrer Wahl.

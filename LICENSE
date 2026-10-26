@@ -1,0 +1,18 @@
+EtherTether
+Copyright 2026 Oytun Cagil Koltuk
+
+EtherTether is dual licensed. You may use, copy, modify and distribute it under
+the terms of EITHER of these licenses, at your option:
+
+  * the Apache License, Version 2.0, in the file LICENSE-APACHE, or
+  * the GNU General Public License, version 3 or (at your option) any later
+    version, in the file LICENSE-GPL.
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+
+Unless you explicitly state otherwise, any contribution you submit for inclusion
+in EtherTether is offered under the same two licenses, without any additional
+terms or conditions, and must carry a Developer Certificate of Origin sign-off
+(see CONTRIBUTING.md).
+
+Third-party components keep their own licenses; see NOTICE.

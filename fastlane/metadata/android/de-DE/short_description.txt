@@ -1,0 +1,1 @@
+Ethernet-Tethering mit einer festen IPv4-Adresse Ihrer Wahl, über Shizuku

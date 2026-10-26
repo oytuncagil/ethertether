@@ -1,0 +1,1 @@
+Ethernet tethering with a fixed IPv4 address you choose, through Shizuku
