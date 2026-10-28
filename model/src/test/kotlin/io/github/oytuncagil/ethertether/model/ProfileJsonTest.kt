@@ -41,6 +41,50 @@ class ProfileJsonTest {
     }
 
     @Test
+    fun storageWrittenByVersion100StaysReadableAndUnchanged() {
+        // Exactly what EtherTether 1.0.0 stored for this list; library updates must keep reading and writing it.
+        val text = """
+            {
+                "format": "ethertether-profiles",
+                "version": 1,
+                "selected": "4f1c",
+                "profiles": [
+                    {
+                        "name": "",
+                        "mode": "STATIC",
+                        "phoneAddress": "169.254.0.42",
+                        "clientAddress": "169.254.0.1",
+                        "prefixLength": "16",
+                        "scope": "LOCAL_ONLY",
+                        "allowScopeFallback": false,
+                        "id": "preset-car",
+                        "preset": "CAR_LINK_LOCAL"
+                    },
+                    {
+                        "name": "Bench",
+                        "mode": "STATIC",
+                        "phoneAddress": "10.20.0.1",
+                        "clientAddress": "10.20.0.2",
+                        "prefixLength": "30",
+                        "scope": "SHARE_INTERNET",
+                        "allowScopeFallback": true,
+                        "id": "4f1c"
+                    }
+                ]
+            }
+        """.trimIndent()
+        val list = ProfileList(
+            listOf(
+                Profile("preset-car", "", Preset.CAR_LINK_LOCAL, TetherInput(TetherMode.STATIC, "169.254.0.42", "169.254.0.1", "16", SharingScope.LOCAL_ONLY)),
+                Profile("4f1c", "Bench", null, TetherInput(TetherMode.STATIC, "10.20.0.1", "10.20.0.2", "30", SharingScope.SHARE_INTERNET, true)),
+            ),
+            "4f1c",
+        )
+        assertEquals(list, ProfileJson.restore(text))
+        assertEquals(text, ProfileJson.store(list))
+    }
+
+    @Test
     fun restoreRepairsAnUnknownSelection() {
         val text = ProfileJson.store(ProfileList.initial.copy(selectedId = "gone"))
         assertEquals("preset-car", ProfileJson.restore(text)?.selectedId)

@@ -251,16 +251,16 @@ Apache-2.0 (VPN Hotspot, AOSP) and MIT (Ethernet Tether Autostart, android-testt
 | Compose BOM / ui / material3 | 2026.09.00 / 1.12.1 / 1.4.0 | Apache-2.0 | yes |
 | dev.rikka.shizuku api, provider | 13.1.5 | MIT | yes |
 | hiddenapibypass | 6.1 | Apache-2.0 | no: the engine runs in a Shizuku user service, which has no hidden API restrictions |
-| kotlinx-serialization-json | 1.11.0 | Apache-2.0 | yes (profile storage, import and export, navigation routes) |
+| kotlinx-serialization-json | 1.12.0 | Apache-2.0 | yes (profile storage, import and export, navigation routes) |
 | navigation-compose | 2.10.2 | Apache-2.0 | yes |
-| datastore-preferences | 1.2.1 | Apache-2.0 (bundled protobuf BSD-3-Clause) | yes |
+| datastore-preferences | 1.3.0 | Apache-2.0 (bundled protobuf BSD-3-Clause) | yes |
 | glance-appwidget, glance-material3 | 1.2.0 | Apache-2.0 (brings WorkManager, Apache-2.0, which adds the WAKE_LOCK permission) | yes |
 | lifecycle-service | 2.11.0 | Apache-2.0 | yes |
 | work-runtime | 2.12.0 | Apache-2.0 | yes (pinned above the version Glance brings; see DESIGN.md) |
 | aboutlibraries-core, -compose-m3 | 15.3.0 | Apache-2.0 | yes |
 | libsu core, service | 6.0.0 (JitPack) | Apache-2.0 | no (no root backend) |
 
-Build and test only (not shipped): AGP 9.4.1, Kotlin Gradle plugins 2.4.21, Gradle 9.8.1 wrapper (Apache-2.0), JUnit 4.13.2 (EPL-1.0), Robolectric 4.17 (MIT), kotlinx-coroutines-test 1.11.0, Compose ui-test 1.12.1, androidx.test core 1.7.0 and ext-junit 1.3.0, Roborazzi 1.76.0 (screenshot and accessibility tests) with Google's Accessibility Test Framework 4.1.1, and the AboutLibraries Gradle plugin 15.3.0 (all Apache-2.0).
+Build and test only (not shipped): AGP 9.4.1, Kotlin Gradle plugins 2.4.21, Gradle 9.8.2 wrapper (Apache-2.0), JUnit 4.13.2 (EPL-1.0), Robolectric 4.17 (MIT), kotlinx-coroutines-test 1.11.0, Compose ui-test 1.12.1, androidx.test core 1.7.0 and ext-junit 1.3.0, Roborazzi 1.77.0 (screenshot and accessibility tests) with Google's Accessibility Test Framework 4.1.1, and the AboutLibraries Gradle plugin 15.3.0 (all Apache-2.0).
 
 ## Auto-start and background limits
 

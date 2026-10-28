@@ -25,7 +25,7 @@ Sign off with:
 git commit -s
 ```
 
-This adds a line like `Signed-off-by: Your Name <you@example.com>`, which must match the commit author. You may use your GitHub noreply address. A CI check rejects pull requests with unsigned commits. To fix a branch, run `git rebase --signoff main` and force-push the branch.
+This adds a line like `Signed-off-by: Your Name <you@example.com>`, which must match the commit author. You may use your GitHub noreply address. A CI check rejects pull requests with unsigned commits; a merge commit needs a sign-off too when it resolves a conflict or adds a change of its own. To fix a branch, run `git rebase --signoff main` and force-push the branch.
 
 ## Every file has a license header
 
@@ -40,7 +40,7 @@ Add your own `SPDX-FileCopyrightText` line when you make a substantial change. F
 
 ## Building
 
-Requirements: JDK 21 and the Android SDK with platform `android-37.0` and build tools 37.0.0. The Gradle wrapper downloads Gradle 9.8.1 and checks its checksum.
+Requirements: JDK 21 and the Android SDK with platform `android-37.0` and build tools 37.0.0. The Gradle wrapper downloads Gradle 9.8.2 and checks its checksum.
 
 ```bash
 ./gradlew assembleDebug
