@@ -37,4 +37,10 @@ A report that a phone or adapter works or fails is valuable even without a bug. 
 
 ## Dependabot
 
-Weekly update pull requests come without a sign-off. The maintainer takes the update over in an own signed-off commit (or a branch with the same change) once CI is green, and the Dependabot pull request closes by itself.
+Dependabot's weekly update pull requests have no sign-off; the sign-off check lets them through only for Dependabot's own commits on pull requests Dependabot opened (`scripts/check_dco.sh`). Before merging one with squash:
+
+1. CI is green.
+2. The library's release notes show nothing that changes the app's behaviour, and its license is still compatible with both Apache-2.0 and GPL-3.0-or-later.
+3. Updates of libraries shipped in the APK get a line under `[Unreleased]` in CHANGELOG.md; build and test tools do not.
+
+Several updates can also be taken over together in one signed-off pull request; Dependabot then closes its own pull requests by itself.

@@ -9,7 +9,7 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-10-23
+## [1.0.0] - 2026-10-28
 
 First public release.
 
