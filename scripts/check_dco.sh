@@ -6,10 +6,15 @@
 # (Developer Certificate of Origin 1.1, https://developercertificate.org/).
 # Usage: [PR_AUTHOR=login] scripts/check_dco.sh BASE_SHA HEAD_SHA
 #
-# Dependabot cannot sign off; its updates are generated, not contributed. Its commits are exempt
-# only on a pull request Dependabot opened itself (PR_AUTHOR comes from GitHub and cannot be set by
-# a contributor) and only with Dependabot's exact author address. Anyone can put a bot-like address
-# into a commit, so the address alone is never enough.
+# A merge commit needs no sign-off only when it adds nothing of its own (its combined diff is
+# empty). One that resolves a conflict or brings in a new change is checked like any other commit.
+#
+# Dependabot signs off as <support@github.com>, which is not its author address, and its updates
+# are generated, not contributed. Its commits are exempt only on a pull request Dependabot opened
+# itself (PR_AUTHOR is the login GitHub gives for the pull request, not anything in the commits) and
+# only with Dependabot's exact author address. Anyone can put a bot-like address into a commit, so
+# the address alone is never enough. CI runs a pull request's own copy of this script and of
+# ci.yml, so a pull request that changes them needs a careful read.
 set -eu
 
 base="$1"
@@ -18,16 +23,29 @@ pr_author="${PR_AUTHOR:-}"
 dependabot_email="49699333+dependabot[bot]@users.noreply.github.com"
 missing=0
 
-for commit in $(git rev-list --no-merges "$base..$head"); do
+for rev in "$base" "$head"; do
+    if ! git rev-parse --quiet --verify "$rev^{commit}" >/dev/null; then
+        printf "Unknown commit: '%s'\n" "$rev"
+        exit 2
+    fi
+done
+commits=$(git rev-list "$base..$head")
+
+for commit in $commits; do
+    summary=$(git log -1 --format='%h %s' "$commit")
+    if git rev-parse --quiet --verify "$commit^2" >/dev/null && [ -z "$(git diff-tree --cc --no-commit-id -r "$commit")" ]; then
+        printf 'merge   %s\n' "$summary"
+        continue
+    fi
     author_email=$(git log -1 --format='%ae' "$commit")
     if [ "$pr_author" = "dependabot[bot]" ] && [ "$author_email" = "$dependabot_email" ]; then
-        echo "bot     $(git log -1 --format='%h %s' "$commit")"
+        printf 'bot     %s\n' "$summary"
         continue
     fi
     if git log -1 --format='%(trailers:key=Signed-off-by,valueonly)' "$commit" | grep -qiF "<$author_email>"; then
-        echo "ok      $(git log -1 --format='%h %s' "$commit")"
+        printf 'ok      %s\n' "$summary"
     else
-        echo "MISSING $(git log -1 --format='%h %s' "$commit") (needs Signed-off-by with <$author_email>)"
+        printf 'MISSING %s (needs Signed-off-by with <%s>)\n' "$summary" "$author_email"
         missing=1
     fi
 done

@@ -33,14 +33,15 @@ A report that a phone or adapter works or fails is valuable even without a bug. 
 1. CI must be green: tests, lint, permission and keep-rule checks, REUSE and the DCO check (every commit `Signed-off-by`). Without a sign-off the change cannot be accepted, because the dual license needs it (CONTRIBUTING.md).
 2. No code under other licenses, no new INTERNET permission, no trackers or proprietary libraries.
 3. User-visible text in string resources; for translations, button names must match the translated buttons.
-4. Merge with squash; the title ends with the pull request number.
+4. Changes to `.github/` or `scripts/` get a careful read: CI runs the pull request's own copy of the workflows and checks, so such a change could switch a check off.
+5. Merge with squash; the title ends with the pull request number.
 
 ## Dependabot
 
-Dependabot's weekly update pull requests have no sign-off; the sign-off check lets them through only for Dependabot's own commits on pull requests Dependabot opened (`scripts/check_dco.sh`). Before merging one with squash:
+Dependabot's update pull requests (weekly and security) sign off as `dependabot[bot] <support@github.com>`, which is not their author address. The sign-off check therefore exempts commits with Dependabot's author address on pull requests Dependabot opened, and nothing else (`scripts/check_dco.sh`). Only people with write access can push to Dependabot's branches. Before merging one with squash:
 
 1. CI is green.
 2. The library's release notes show nothing that changes the app's behaviour, and its license is still compatible with both Apache-2.0 and GPL-3.0-or-later.
 3. Updates of libraries shipped in the APK get a line under `[Unreleased]` in CHANGELOG.md; build and test tools do not.
 
-Several updates can also be taken over together in one signed-off pull request; Dependabot then closes its own pull requests by itself.
+Several updates can also be taken over together in one pull request, with the changes made in your own signed-off commits. Cherry-picked Dependabot commits keep Dependabot as their author and fail the check. Dependabot closes its own pull requests once main has the new versions.

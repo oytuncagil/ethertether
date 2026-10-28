@@ -25,7 +25,7 @@ Sign off with:
 git commit -s
 ```
 
-This adds a line like `Signed-off-by: Your Name <you@example.com>`, which must match the commit author. You may use your GitHub noreply address. A CI check rejects pull requests with unsigned commits (only Dependabot's own update commits are exempt). To fix a branch, run `git rebase --signoff main` and force-push the branch.
+This adds a line like `Signed-off-by: Your Name <you@example.com>`, which must match the commit author. You may use your GitHub noreply address. A CI check rejects pull requests with unsigned commits; a merge commit needs a sign-off too when it resolves a conflict or adds a change of its own. To fix a branch, run `git rebase --signoff main` and force-push the branch.
 
 ## Every file has a license header
 

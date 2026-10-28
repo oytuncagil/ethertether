@@ -9,6 +9,10 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Changed
+
+- Updated kotlinx-serialization-json to 1.12.0 and AndroidX DataStore to 1.3.0.
+
 ## [1.0.0] - 2026-10-28
 
 First public release.
