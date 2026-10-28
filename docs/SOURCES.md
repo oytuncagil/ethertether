@@ -133,7 +133,7 @@ Paths below are in `platform/packages/modules/Connectivity` on the branches `and
 | https://repo1.maven.org/maven2/ (maven-metadata.xml and POMs) | Kotlin, kotlinx, Shizuku, hiddenapibypass, Robolectric, JUnit versions and licenses |
 | https://jitpack.io/com/github/topjohnwu/libsu/core/6.0.0/core-6.0.0.pom | libsu POM without license data |
 | https://developer.android.com/develop/ui/compose/graphics/images/material | material-icons artifact no longer recommended |
-| https://services.gradle.org/distributions/gradle-9.8.1-bin.zip.sha256 and gradle-9.8.1-wrapper.jar.sha256 | Gradle checksums pinned in the wrapper |
+| https://services.gradle.org/distributions/gradle-9.8.2-bin.zip.sha256 and gradle-9.8.2-wrapper.jar.sha256 | Gradle checksums pinned in the wrapper (checked 2026-10-28; the 9.8.2 wrapper jar is identical to 9.8.1) |
 
 ## Other tools
 
@@ -241,7 +241,7 @@ Accessed 2026-10-23.
 | https://developer.android.com/google/play/requirements/target-sdk | Play target API 36 for new apps and updates since 2026-08-31 |
 | https://support.google.com/googleplay/android-developer/answer/13392821 | Play foreground service declaration with a video per type |
 | https://developer.android.com/guide/components/fg-service-types | Scope of the `connectedDevice` type |
-| https://services.gradle.org/distributions/gradle-9.8.1-bin.zip.sha256 and gradle-9.8.1-wrapper.jar.sha256 | Checksums of the Gradle 9.8.1 wrapper update (verified against the generated files) |
+| https://services.gradle.org/distributions/gradle-9.8.1-bin.zip.sha256 and gradle-9.8.1-wrapper.jar.sha256 | Checksums of the earlier Gradle 9.8.1 wrapper update |
 | https://android.googlesource.com/platform/packages/modules/Connectivity/+/refs/heads/main/framework-t/src/android/net/EthernetManager.java and service-t/src/com/android/server/ethernet/EthernetServiceImpl.java | `updateConfiguration`, `enableInterface`, `setConfiguration` permissions (`MANAGE_ETHERNET_NETWORKS`, `NETWORK_STACK`) |
 | https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/packages/Shell/AndroidManifest.xml | The shell user holds `NETWORK_SETTINGS` and `TETHER_PRIVILEGED`, not `MANAGE_ETHERNET_NETWORKS` or `NETWORK_STACK` |
 
