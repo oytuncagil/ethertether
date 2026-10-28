@@ -5,7 +5,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 # Listings
 
-Where EtherTether is or will be listed, what each place requires, and the prepared texts. Nothing here has been submitted yet.
+Where EtherTether is or will be listed, what each place requires, and the texts used.
+
+| Place | Status |
+|---|---|
+| GitHub Releases | 1.0.0 published on 2026-10-28 |
+| Obtainium | Works with the releases (device test V4, 2026-10-28) |
+| awesome-shizuku | Pull request [timschneeb/awesome-shizuku#183](https://github.com/timschneeb/awesome-shizuku/pull/183) opened on 2026-10-28, waiting for the maintainer |
+| IzzyOnDroid | On hold |
+| Google Play | Later |
 
 ## Obtainium
 
@@ -21,7 +29,7 @@ Obtainium installs and updates straight from GitHub Releases.
 | A `.apk` asset | One universal `EtherTether-X.Y.Z.apk`, plus `SHA256SUMS` (ignored) |
 | The same signing key across updates | Every release signed with the one release key, checked in the workflow |
 
-- Checked against the test draft releases (asset names, tag, pre-release flag). Drafts are invisible to Obtainium, so the real install through Obtainium is device test V4, on the first published release.
+- Checked against the test draft releases (asset names, tag, pre-release flag), then on a phone with the published 1.0.0 (device test V4).
 
 ## IzzyOnDroid (on hold)
 
@@ -78,23 +86,23 @@ Reproducible builds: yes, documented in docs/RELEASING.md.
 
 ## awesome-shizuku
 
-The list at https://github.com/timschneeb/awesome-shizuku (checked 2026-10-09): entries go into README.md through a pull request, in alphabetical order in their category, in the format of their CONTRIBUTING.md: `* [Name](link) - Short description, under 250 characters `License``, with the SPDX license expression and tags only if they apply (`Root` only when Shizuku must run as root, which it need not for EtherTether).
+The list at https://github.com/timschneeb/awesome-shizuku (rules checked again on 2026-10-28): entries go into README.md through a pull request, in alphabetical order in their category, in the format of their CONTRIBUTING.md: `* [Name](link) - Short description, under 250 characters `License``, with the SPDX license expression and tags only if they apply (`Root` only when Shizuku must run as root, which it need not for EtherTether).
 
-Entry for the Network section, between "EasySpot" and "FindMyDevice":
+Submitted as pull request #183 on 2026-10-28, an entry in the Network section between "EasySpot" and "FindMyDevice":
 
 ```
-* [EtherTether](https://github.com/oytuncagil/ethertether) - Ethernet tethering with a fixed IPv4 address of your choice (for example link-local devices) or normal DHCP, for any USB-C Ethernet adapter, started through Shizuku; profiles, tile, widget and auto-start on plug-in `Apache-2.0 OR GPL-3.0-or-later`
+* [EtherTether](https://github.com/oytuncagil/ethertether) - Ethernet tethering with a fixed IPv4 address of your choice (for example for link-local devices) or normal DHCP, for any USB-C Ethernet adapter; profiles, Quick Settings tile, widget and automatic start on plug-in `Apache-2.0 OR GPL-3.0-or-later`
 ```
 
 Pull request title and text:
 
 ```
-Add EtherTether (Network)
+Add EtherTether
 
 EtherTether starts Android's own Ethernet tethering with a fixed IPv4 address or normal
-DHCP for any USB or USB-C Ethernet adapter. It uses Shizuku in shell mode for the
-tethering request only. Open source (Apache-2.0 OR GPL-3.0-or-later), English README,
-signed APKs on GitHub Releases.
+DHCP for any USB or USB-C Ethernet adapter. It uses Shizuku in shell mode (no root needed)
+for the tethering request only. Open source (Apache-2.0 OR GPL-3.0-or-later), English
+README, signed APKs on GitHub Releases.
 ```
 
 ## Root module repositories
