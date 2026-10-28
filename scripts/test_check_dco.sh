@@ -8,7 +8,7 @@ set -eu
 
 # The caller's git settings (author overrides, signing, hooks, an outer GIT_DIR) must not change
 # the results or touch another repository.
-unset CDPATH GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE PR_AUTHOR
+unset CDPATH GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE GIT_CONFIG_PARAMETERS GIT_CONFIG_COUNT PR_AUTHOR
 unset GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL
 export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
 
@@ -26,12 +26,19 @@ signed="Change
 
 Signed-off-by: Dev <dev@example.com>"
 
-# new_repo NAME: a repository with one base commit; sets $repo and $base
+# new_repo NAME: a repository with one base commit holding lines.txt; sets $repo and $base
 new_repo() {
     repo="$work/$(printf '%s' "$1" | tr -c 'a-zA-Z0-9' '_')"
     git init -q "$repo"
+    lines 3 5
     commit base@example.com base
     base=$(git -C "$repo" rev-parse HEAD)
+}
+
+# lines A B: stages lines.txt with nine numbered lines, line 3 being A and line 5 being B
+lines() {
+    printf '1\n2\n%s\n4\n%s\n6\n7\n8\n9\n' "$1" "$2" >"$repo/lines.txt"
+    git -C "$repo" add lines.txt
 }
 
 # commit EMAIL MESSAGE: a commit by EMAIL in $repo (also finishes a merge in progress)
@@ -39,21 +46,25 @@ commit() {
     git -C "$repo" -c user.name=author -c user.email="$1" commit -q --allow-empty -m "$2"
 }
 
-# side_branch: a branch "side" from the base with one signed commit, and a merge of it left uncommitted
-side_branch() {
+# branches SIDE_A SIDE_B MAIN_A MAIN_B: signed commits setting lines.txt (see lines) on a new
+# branch "side" from the base and on the main branch, then a merge of "side" left uncommitted
+branches() {
     git -C "$repo" checkout -q -b side "$base"
+    lines "$1" "$2"
     commit dev@example.com "$signed"
     git -C "$repo" checkout -q -
-    git -C "$repo" -c user.name=author -c user.email=dev@example.com merge -q --no-ff --no-commit side >/dev/null 2>&1
+    lines "$3" "$4"
+    commit dev@example.com "$signed"
+    git -C "$repo" -c user.name=author -c user.email=dev@example.com merge -q --no-ff --no-commit side >/dev/null 2>&1 || true
 }
 
-# verify PASS|FAIL NAME PR_AUTHOR [BASE]: runs check_dco.sh on BASE..HEAD of $repo; an empty
-# PR_AUTHOR leaves it unset, as on a local run
+# verify PASS|FAIL NAME PR_AUTHOR [BASE]: runs check_dco.sh on BASE..HEAD of $repo (BASE defaults
+# to the base commit); an empty PR_AUTHOR leaves it unset, as on a local run
 verify() {
     if (
         cd "$repo"
         if [ -n "$3" ]; then export PR_AUTHOR="$3"; fi
-        sh "$check" "${4:-$base}" HEAD >/dev/null 2>&1
+        sh "$check" "${4-$base}" HEAD >/dev/null 2>&1
     ); then got=PASS; else got=FAIL; fi
     if [ "$got" = "$1" ]; then
         echo "ok   $2"
@@ -93,20 +104,21 @@ commit dev@example.com "Change"
 commit dev@example.com "$signed"
 verify FAIL "one unsigned commit among signed ones" "someone"
 
-new_repo "merge that only joins two branches"
-side_branch
+# Changes two lines apart merge cleanly, although the merge's combined diff shows both.
+new_repo "clean merge of nearby changes"
+branches side 5 3 main
 commit dev@example.com "Merge branch 'side'"
-verify PASS "merge that only joins two branches" "someone"
+verify PASS "clean merge of nearby changes" "someone"
 
 new_repo "unsigned merge that adds a change"
-side_branch
+branches side 5 3 main
 printf 'new\n' >"$repo/added.txt"
 git -C "$repo" add added.txt
 commit dev@example.com "Merge branch 'side'"
 verify FAIL "unsigned merge that adds a change" "someone"
 
 new_repo "signed merge that adds a change"
-side_branch
+branches side 5 3 main
 printf 'new\n' >"$repo/added.txt"
 git -C "$repo" add added.txt
 commit dev@example.com "Merge branch 'side'
@@ -114,8 +126,15 @@ commit dev@example.com "Merge branch 'side'
 Signed-off-by: Dev <dev@example.com>"
 verify PASS "signed merge that adds a change" "someone"
 
+new_repo "unsigned merge resolving a conflict by keeping one side"
+branches side 5 main 5
+lines main 5
+commit dev@example.com "Merge branch 'side'"
+verify FAIL "unsigned merge resolving a conflict by keeping one side" "someone"
+
 new_repo "unknown base commit"
 commit dev@example.com "$signed"
 verify FAIL "unknown base commit" "someone" 0123456789012345678901234567890123456789
+verify FAIL "empty base commit" "someone" ""
 
 exit "$failures"
