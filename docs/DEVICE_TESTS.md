@@ -337,7 +337,8 @@ Test phone: POCO F7, Android 16, HyperOS 3.0, not rooted, Shizuku 13 over wirele
 | V2 Play Protect | Pass, with a warning | Play Protect warned about a new developer; installed with "Install anyway" |
 | V5 Store texts | Pass | Turkish and German texts reviewed and reworded |
 | V3 1.0.0-rc.1 over the test build | Pass | Installed as an update; profiles kept |
+| V4 Obtainium, 1.0.0 | Pass | Added from the repository address; Obtainium shows 1.0.0. Update detection (step 3) is checked at the next release |
 
 ### Not run yet
 
-I1 to I4, E5, E6, E10, H4, H6, H7, H9, H10, U3 to U6, R2, R4, R6 (battery saver, Data Saver), R7 step 3, R8, R9 and V4. To retest after their fixes: E12, H8 and R1.
+I1 to I4, E5, E6, E10, H4, H6, H7, H9, H10, U3 to U6, R2, R4, R6 (battery saver, Data Saver), R7 step 3, R8, R9 and V4 step 3 (at the next release). To retest after their fixes: E12, H8 and R1.
